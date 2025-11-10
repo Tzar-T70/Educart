@@ -1,30 +1,3 @@
-/* Navigation Bar */
-nav {
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Brand Title */
-nav .text-2xl {
-  letter-spacing: 0.5px;
-}
-
-/* Navigation Links */
-nav ul li a {
-  transition: all 0.2s ease-in-out;
-}
-nav ul li a:hover {
-  text-decoration: underline;
-  opacity: 0.85;
-}
-
-.bgimg {
-    background-position: center;
-    background-size: cover;
-    /* background-image: url(""); */
-    min-height: 75%
-
-}
-
 /* Category Buttons */
 .nav-btn {
   font-family: 'Segoe UI', sans-serif;
@@ -42,6 +15,7 @@ nav ul li a:hover {
   opacity: 0.85;
 }
 
+/* Gradient Button */
 .button-gradient {
   background: linear-gradient(135deg, #8B2500, #008080);
   color: white;

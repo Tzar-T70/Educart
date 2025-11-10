@@ -1,26 +1,32 @@
-/* Navigation Bar */
-nav {
+/* Technology Page Buttons */
+.nav-btn {
   font-family: 'Segoe UI', sans-serif;
-}
-
-/* Brand Title */
-nav .text-2xl {
-  letter-spacing: 0.5px;
-}
-
-/* Navigation Links */
-nav ul li a {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-nav ul li a:hover {
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
   text-decoration: underline;
   opacity: 0.85;
 }
 
-.bgimg {
-    background-position: center;
-    background-size: cover;
-    /* background-image: url(""); */
-    min-height: 75%
+.button-gradient {
+  background: linear-gradient(135deg, #8B2500, #008080);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.button-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
