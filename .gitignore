@@ -17,5 +17,3 @@ yarn-error.log
 /.idea
 /.vscode
 /bootstrap/cache
-bootstrap/cache/config.php
-/bootstrap/cache
