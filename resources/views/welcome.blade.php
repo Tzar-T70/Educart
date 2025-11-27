@@ -14,23 +14,40 @@
                     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div class="sm:text-center lg:text-left">
                             <h1 class="text-4xl tracking-tight font-extrabold text-brand-dark sm:text-5xl md:text-6xl">
-                                <span class="block xl:inline">Smart shopping for</span>
-                                <span class="block text-brand-dark-blue xl:inline"> your academic life</span>
+                                @auth
+                                    <span class="block xl:inline">Welcome back,</span>
+                                    <span class="block text-brand-dark-blue xl:inline"> {{ Auth::user()->name }}</span>
+                                @else
+                                    <span class="block xl:inline">Smart shopping for</span>
+                                    <span class="block text-brand-dark-blue xl:inline"> your academic life</span>
+                                @endauth
                             </h1>
                             <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                                Welcome to Educart. Exclusive deals on everything you need, from tech and textbooks to dorm essentials and fashion. All in one place, all for students.
+                                @auth
+                                    Ready to continue your shopping journey? Check out the latest deals and your personalized recommendations.
+                                @else
+                                    Welcome to Educart. Exclusive deals on everything you need, from tech and textbooks to dorm essentials and fashion. All in one place, all for students.
+                                @endauth
                             </p>
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                                <div class="rounded-md shadow">
-                                    <button @click="openModal('register')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
-                                        Get started
-                                    </button>
-                                </div>
-                                <div class="mt-3 sm:mt-0 sm:ml-3">
-                                    <button @click="openModal('login')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-brand-dark-blue bg-brand-gray hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
-                                        Log In
-                                    </button>
-                                </div>
+                                @auth
+                                    <div class="rounded-md shadow">
+                                        <a href="{{ route('dashboard') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
+                                            Go to Dashboard
+                                        </a>
+                                    </div>
+                                @else
+                                    <div class="rounded-md shadow">
+                                        <button @click="openModal('register')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
+                                            Get started
+                                        </button>
+                                    </div>
+                                    <div class="mt-3 sm:mt-0 sm:ml-3">
+                                        <button @click="openModal('login')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-brand-dark-blue bg-brand-gray hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
+                                            Log In
+                                        </button>
+                                    </div>
+                                @endauth
                             </div>
                         </div>
                     </main>
