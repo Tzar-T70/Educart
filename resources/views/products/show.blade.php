@@ -52,7 +52,7 @@
                                 <span class="ml-2 text-gray-600 text-sm">(128 reviews)</span>
                             </div>
 
-                            <div class="text-2xl font-bold text-brand-dark mb-6">${{ number_format($product->price, 2) }}</div>
+                            <div class="text-2xl font-bold text-brand-dark mb-6">£{{ number_format($product->price, 2) }}</div>
 
                             <div class="prose prose-sm text-gray-600 mb-8">
                                 <p>{{ $product->description }}</p>
