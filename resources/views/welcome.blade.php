@@ -32,10 +32,17 @@
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                 @auth
                                     <div class="rounded-md shadow">
-                                        <a href="{{ route('dashboard') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
-                                            Go to Dashboard
+                                        <a href="#shop-section" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
+                                            Shop Now
                                         </a>
                                     </div>
+                                    @if(Auth::user()->is_admin)
+                                        <div class="mt-3 sm:mt-0 sm:ml-3 rounded-md shadow">
+                                            <a href="{{ route('dashboard') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-brand-dark-blue bg-brand-beige hover:bg-brand-gray md:py-4 md:text-lg md:px-10">
+                                                Dashboard
+                                            </a>
+                                        </div>
+                                    @endif
                                 @else
                                     <div class="rounded-md shadow">
                                         <button @click="openModal('register')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
@@ -59,7 +66,7 @@
         </div>
 
         <!-- Placeholder Product Grid -->
-        <div class="py-12 bg-brand-cream">
+        <div id="shop-section" class="py-12 bg-brand-cream scroll-mt-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-extrabold text-brand-dark text-center">Shop by Category</h2>
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
