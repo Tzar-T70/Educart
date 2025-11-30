@@ -1,42 +1,48 @@
-<nav x-data="{ open: false }" class="bg-brand-beige border-b border-brand-gray">
+<nav class="bg-brand-beige border-b border-brand-gray z-50">    
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                <div class="shrink-0 flex items-center-x-2">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                        <img src ="/images/Logo_transparent.png" alt= "Educart Logo" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-brand-dark-blue">Educart</span>
                     </a>
                 </div>
 
-                <!-- Navigation Links (Placeholder) -->
+                <!-- Navigation Links  -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="#" :active="false">
                         {{ __('Technology') }}
                     </x-nav-link>
                     <x-nav-link href="#" :active="false">
-                        {{ __('Stationery') }}
+                        {{ __('Mens') }}
                     </x-nav-link>
                     <x-nav-link href="#" :active="false">
-                        {{ __('Dorm Life') }}
+                        {{ __('Womens') }}
                     </x-nav-link>
                     <x-nav-link href="#" :active="false">
-                        {{ __('Fashion') }}
+                        {{ __('Accessories') }}
+                    </x-nav-link>
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Auth Links -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                @guest
-                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
-                        {{ __('Log in') }}
-                    </button>
-                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'register' })" class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
-                        {{ __('Register') }}
-                    </button>
-                @endguest
+            @guest
+            <button @click="openModal('login')" 
+                class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
+                {{ __('Log in') }}
+            </button>
+            <button @click="openModal('register')" 
+                class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
+                {{ __('Register') }}
+            </button>
+            @endguest
 
                 @auth
                 <!-- This is the logged-in user dropdown -->
@@ -86,21 +92,24 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="#">{{ __('Technology') }}</x-responsive-nav-link>
-            <x-responsive-nav-link href="#">{{ __('Stationery') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/technology">{{ __('Technology') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/mens">{{ __('Mens') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/womens">{{ __('Womens') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/accessories">{{ __('Accessories') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/home">{{ __('Home') }}</x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-brand-gray">
             @guest
-                <div class="px-4">
-                     <x-responsive-nav-link href="#" @click.prevent="$dispatch('open-auth-modal', { view: 'login' })">
-                        {{ __('Log in') }}
-                    </x-responsive-nav-link>
-                     <x-responsive-nav-link href="#" @click.prevent="$dispatch('open-auth-modal', { view: 'register' })">
-                        {{ __('Register') }}
-                    </x-responsive-nav-link>
-                </div>
+            <div class="px-4">
+                <x-responsive-nav-link href="#" @click="openModal('login')">
+                    {{ __('Log in') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link href="#" @click="openModal('register')">
+                    {{ __('Register') }}
+                </x-responsive-nav-link>
+             </div>
             @endguest
             @auth
                 <div class="px-4">
