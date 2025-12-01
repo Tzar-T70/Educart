@@ -10,7 +10,8 @@
                         <polygon points="50,0 100,0 50,100 0,100" />
                     </svg>
                     <!-- Main hero content -->
-                     <div class="mt-6 px-4 sm:mt-8 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-16">                            <h1 class="text-4xl tracking-tight font-extrabold text-brand-dark sm:text-5xl md:text-6xl">
+                     <div class="mt-6 px-4 sm:mt-8 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-16">                            
+                                <h1 class="text-4xl tracking-tight font-extrabold text-brand-dark sm:text-5xl md:text-6xl">
                                 <span class="block xl:inline">Smart shopping for</span>
                                 <span class="block text-brand-dark-blue xl:inline"> the academic life</span>
                             </h1> 
