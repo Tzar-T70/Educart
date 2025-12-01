@@ -21,7 +21,7 @@
                                     <span class="block text-brand-dark-blue xl:inline"> the academic life</span>
                                 @endauth 
                             </h1>
-                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-l lg:mx-0">
                                 @auth
                                     Ready to continue your shopping journey? Check out the latest deals and your personalized recommendations.
                                 @else
