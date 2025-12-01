@@ -10,17 +10,41 @@
                         <polygon points="50,0 100,0 50,100 0,100" />
                     </svg>
                     <!-- Main hero content -->
-                     <div class="mt-6 px-4 sm:mt-8 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-16">                            
-                                <h1 class="text-4xl tracking-tight font-extrabold text-brand-dark sm:text-5xl md:text-6xl">
-                                <span class="block xl:inline">Smart shopping for</span>
-                                <span class="block text-brand-dark-blue xl:inline"> the academic life</span>
-                            </h1> 
-                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg md:mt-5 md:text-l">
-                                 Welcome to Educart. Our vision is to empower students with a smarter, more affordable way to shop,                                 
-                                 making everyday essentials, fashion, and lifestyle products accessible without the stress of overspending.
-                                 We believe that student life should be supported by convenience, style, and savings.
+                     <div class="mt-6 px-4 sm:mt-8 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-16">   
+                           <div class="sm:text-center lg:text-left">
+                            <h1 class="text-4xl tracking-tight font-extrabold text-brand-dark sm:text-5xl md:text-6xl">
+                                @auth
+                                    <span class="block xl:inline">Welcome back,</span>
+                                    <span class="block text-brand-dark-blue xl:inline"> {{ Auth::user()->name }}</span>
+                                @else
+                                    <span class="block xl:inline">Smart shopping for</span>
+                                    <span class="block text-brand-dark-blue xl:inline"> the academic life</span>
+                                @endauth 
+                            </h1>
+                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                                @auth
+                                    Ready to continue your shopping journey? Check out the latest deals and your personalized recommendations.
+                                @else
+                                    Welcome to Educart. Our vision is to empower students with a smarter, more affordable way to shop,                                 
+                                    making everyday essentials, fashion, and lifestyle products accessible without the stress of overspending.
+                                    We believe that student life should be supported by convenience, style, and savings.
+                                @endauth
                             </p>                           
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                @auth
+                                    <div class="rounded-md shadow">
+                                        <a href="#shop-section" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
+                                            Shop Now
+                                        </a>
+                                    </div>
+                                    @if(Auth::user()->is_admin)
+                                        <div class="mt-3 sm:mt-0 sm:ml-3 rounded-md shadow">
+                                            <a href="{{ route('dashboard') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-brand-dark-blue bg-brand-beige hover:bg-brand-gray md:py-4 md:text-lg md:px-10">
+                                                Dashboard
+                                            </a>
+                                        </div>
+                                    @endif
+                                @else
                                 <div class="rounded-md shadow">
                                     <button @click="openModal('register')" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-dark-blue hover:bg-opacity-90 md:py-4 md:text-lg md:px-10">
                                        Get started
@@ -31,6 +55,7 @@
                                      Log In  
                                     </button>
                                 </div>
+                                @endauth
                             </div>
                         </div> 
                     </div>
