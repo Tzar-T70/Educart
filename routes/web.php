@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/womens', function () {
+    return view('womens');
+});
+
+Route::get('/technology', function () {
+    return view('technology');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
