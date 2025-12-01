@@ -15,7 +15,7 @@
                                 <span class="block xl:inline">Smart shopping for</span>
                                 <span class="block text-brand-dark-blue xl:inline"> the academic life</span>
                             </h1> 
-                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
+                            <p class="mt-3 text-base text-brand-dark sm:mt-5 sm:text-lg md:mt-5 md:text-l">
                                  Welcome to Educart. Our vision is to empower students with a smarter, more affordable way to shop,                                 
                                  making everyday essentials, fashion, and lifestyle products accessible without the stress of overspending.
                                  We believe that student life should be supported by convenience, style, and savings.
