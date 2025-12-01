@@ -26,6 +26,18 @@ Route::get('/technology', function () {
     return view('technology');
 });
 
+Route::get('/mens', function () {
+    return view('mens');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/accessories', function () {
+    return view('accessories');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

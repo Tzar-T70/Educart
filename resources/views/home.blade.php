@@ -1,9 +1,44 @@
-<!DOCTYPE html> 
+<?php
+$products = [
+    [
+        "img"   => "images/home/cooking1.jpg",
+        "alt"   => "Baking Kit",
+        "name"  => "Baking Kit",
+        "price" => "£8.99"
+    ],
+    [
+        "img"   => "images/home/bedding1.jpg",
+        "alt"   => "Bedding",
+        "name"  => "Bedding",
+        "price" => "£13.00"
+    ],
+    [
+        "img"   => "images/home/cleaning1.jpg",
+        "alt"   => "Cleaning Essentials",
+        "name"  => "Cleaning Essentials",
+        "price" => "£8.50"
+    ],
+    [
+        "img"   => "images/home/toielt1.jpg",
+        "alt"   => "Toiletries",
+        "name"  => "Toiletries",
+        "price" => "£23.00"
+    ],
+    [
+        "img"   => "images/home/decor1.jpg",
+        "alt"   => "Dining Set",
+        "name"  => "Dining Set",
+        "price" => "£9.50"
+    ]
+];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessories Collection | Educart</title>
+  <title>Home Appliance Collection | Educart</title>
+
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -83,18 +118,8 @@
       margin: 5px 0 10px;
     }
 
-    .product-card .student-price {
-      background: #1DD3B0;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.85em;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
     .product-card button {
-      background: linear-gradient(#1DD3B0 100%);
+      background: #1DD3B0;
       border: none;
       color: white;
       padding: 12px 20px;
@@ -110,58 +135,29 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h2>Educart</h2>
     <p>Smart Shopping for Students</p>
   </header>
 
   <main>
-    <h1>Accessories Collection</h1>
+    <h1>Home Appliances Collection</h1>
 
     <section class="product-grid">
-      <div class="product-card">
-        <img src="images/accessories/watch1.jpg" alt="Watch">
-        <h3>Watch</h3>
-        <p class="price">£8.99</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/accessories/bag1.jpg" alt="Handbag">
-        <h3>Handbag</h3>
-        <p class="price">£13.00</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/accessories/hat1.jpg" alt="Hat">
-        <h3>Hat</h3>
-        <p class="price">£8.50</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/accessories/glasses1.jpg" alt="Glasses">
-        <h3>Glasses</h3>
-        <p class="price">£23.00</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/accessories/scarf1.jpg" alt="Scarf">
-        <h3>Scarf</h3>
-        <p class="price">£9.99</p>
-         <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/accessories/jewellery1.jpg" alt=" Flower Earrings">
-        <h3>Flower Earrings</h3>
-        <p class="price">£9.50</p>
-         <button>Add to Cart</button>
-      </div>
+      <?php foreach ($products as $p): ?>
+        <div class="product-card">
+          <img src="<?= $p['img'] ?>" alt="<?= $p['alt'] ?>">
+          <h3><?= $p['name'] ?></h3>
+          <p class="price"><?= $p['price'] ?></p>
+          <button onclick="alert('Added to cart!')">Add to Cart</button>
+        </div>
+      <?php endforeach; ?>
     </section>
+
   </main>
+
 </body>
 </html>
