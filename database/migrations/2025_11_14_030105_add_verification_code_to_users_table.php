@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('verification_code', 6)->nullable()->after('email_verified_at');
-            $table->timestamp('verification_code_expires_at')->nullable()->after('verification_code');
+            $table->string('verification_code', 6)->nullable();
+            $table->timestamp('verification_code_expires_at')->nullable();
+
         });
     }
 
