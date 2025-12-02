@@ -1,83 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" >
-    <title>EDUCART - Bag</title>
-    <style>
-        h1 {
-            margin-top: 50px;
-            text-align: left;
-        }
-        h2 {
-            margin-top: 75px;
-            text-align: left;
-        }
-        h3 {
-            margin-right: 150px;
-            text-align: right;
-        }
-        p {
-            margin-right: 100px;
-            text-align: right;
-        }
-        table {
-            border-collapse: collapse;
-            margin-left: 0;
-        }
+<x-app-layout>
 
-       .search-container {
-    position: absolute;
-    top: 20px;   
-    right: 20px;
-}
+    {{-- Optional page header (matches your site's style) --}}
+    <x-slot name="header">
+        <h2 class="text-3xl font-bold text-brand-dark-blue">
+            Your Basket
+        </h2>
+    </x-slot>
 
-.search-bar {
-    padding: 6px 10px;
-    border-radius: 5px;
-    
-}
-      
-    </style>
-</head>
-<body>
-    <h1>EDUCART</h1>
+    <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
 
-    <h2>Bag</h2>
-    <div class="search-container">
-    <input type="text">
-    <button>Search</button>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
+            {{-- Basket Items --}}
+            <div class="md:col-span-2 bg-white rounded-xl shadow p-6">
+                @if(count($basket) > 0)
+                    @foreach($basket as $id => $item)
+                        <x-basket-item :id="$id" :item="$item" />
+                    @endforeach
+                @else
+                    <p class="text-brand-dark text-lg">Your basket is empty.</p>
+                @endif
+            </div>
 
-    <table>
-        <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            
-        </tr>
-    </table>
+            {{-- Summary --}}
+            <x-basket-summary :subtotal="$subtotal" />
 
-    <h3><strong>Summary</strong></h3>
+        </div>
 
-    <p>
-       Do you have a promo code?<br>
-      
+    </div>
 
-    <label for="promo">Enter promo code:</label>
-    <input type="text" id="promo" placeholder="Type code here">
-    <br><br>
-
-    Subtotal:<br>
-    Estimated delivery<br><br>
-
-    <a href="Checkout.html">CHECKOUT</a>
-</p>
-
-       
-        
-
-       </a>
-    </p>
-</body>
-</html>
+</x-app-layout>

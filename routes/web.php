@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,9 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/basket', function () {
-    return view('payments.BasketPage');
-});
+Route::get('/basket', [BasketController::class, 'index'])->name('basket.index');
+Route::post('/basket/update/{id}', [BasketController::class, 'updateQuantity'])->name('basket.update');
+Route::post('/basket/remove/{id}', [BasketController::class, 'remove'])->name('basket.remove');
+
 
 Route::get('/checkout', function () {
     return view('payments.Checkout');
