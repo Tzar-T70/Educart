@@ -4,6 +4,7 @@
 
 html {
     scrollbar-gutter: stable;
+    scroll-behavior: smooth;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
@@ -11,11 +12,48 @@ html {
 
 ::-webkit-scrollbar {
     background: transparent;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color:#285570;
-    border-radius: 5px;
+    border-radius: 6px;
+    border: 2px solid #faf7f6;
+    transition: background-color o.3s ease;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #d35400;
+    border-color:#f5cba7;
+}
+
+/* Links */
+a {
+    transition: color 0.3 ease;
+}
+
+/* Buttons*/
+button {
+    transition: background-color 0.3 ease, border-color 0.3 ease;
+}
+
+button:hover {
+    background-color: #e67e22;
+    border-color: #d35400; 
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #e67e22;
+}
+
+/* Cards */
+.card:hover {
+    background-color: #e67e22;
+    color: #fff; /* make text white for contrast */
+    border-color: #e67e22;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    transition: all 0.3s ease;
 }

@@ -36,7 +36,7 @@
             <footer class="bg-brand-dark-blue text-brand-gray">
                 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
                     <p>&copy; {{ date('Y') }} Educart. All rights reserved.</p>
-                    <p class="mt-2 text-sm">Smart Shopping for Your Academic Life</p>
+                    <p class="mt-2 text-sm">Smart Shopping For The Academic Life</p>
                 </div>
             </footer>
             
