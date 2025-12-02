@@ -1,48 +1,47 @@
-<nav x-data="{ open: false }" class="bg-brand-beige border-b border-brand-gray">
+<nav class="bg-brand-beige border-b border-brand-gray z-50">    
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                <div class="shrink-0 flex items-center-x-2">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                        <img src ="/images/Logo_transparent.png" alt= "Educart Logo" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-brand-dark-blue">Educart</span>
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
-                    @foreach($categories as $category)
-                        <div class="relative group h-full flex items-center">
-                            <x-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
-                                {{ $category->name }}
-                            </x-nav-link>
-                            
-                            @if($category->subCategories->count() > 0)
-                                <div class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-md z-50 min-w-[220px] border border-gray-100 overflow-hidden transition-all duration-200 ease-out">
-                                    <div class="py-1">
-                                        @foreach($category->subCategories as $subCategory)
-                                            <a href="{{ route('subcategories.show', [$category, $subCategory]) }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-beige hover:text-brand-dark-blue transition-colors duration-150">
-                                                {{ $subCategory->name }}
-                                            </a>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    @endforeach
+                <!-- Navigation Links  -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Technology') }}
+                    </x-nav-link>
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Mens') }}
+                    </x-nav-link>
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Womens') }}
+                    </x-nav-link>
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Accessories') }}
+                    </x-nav-link>
+                    <x-nav-link href="#" :active="false">
+                        {{ __('Home') }}
+                    </x-nav-link>
                 </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                @guest
-                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
-                        {{ __('Log in') }}
-                    </button>
-                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'register' })" class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
-                        {{ __('Register') }}
-                    </button>
-                @endguest
+            @guest
+            <button @click="openModal('login')" 
+                class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
+                {{ __('Log in') }}
+            </button>
+            <button @click="openModal('register')" 
+                class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
+                {{ __('Register') }}
+            </button>
+            @endguest
 
                 @auth
                     <x-dropdown align="right" width="48">
@@ -91,29 +90,24 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            @foreach($categories as $category)
-                <x-responsive-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
-                    {{ $category->name }}
-                </x-responsive-nav-link>
-                @foreach($category->subCategories as $subCategory)
-                    <x-responsive-nav-link :href="route('subcategories.show', [$category, $subCategory])" class="pl-8 text-sm text-gray-600">
-                        - {{ $subCategory->name }}
-                    </x-responsive-nav-link>
-                @endforeach
-            @endforeach
+        <x-responsive-nav-link href="/categories/technology">{{ __('Technology') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/mens">{{ __('Mens') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/womens">{{ __('Womens') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/accessories">{{ __('Accessories') }}</x-responsive-nav-link>
+        <x-responsive-nav-link href="/categories/home">{{ __('Home') }}</x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-brand-gray">
             @guest
-                <div class="px-4">
-                     <x-responsive-nav-link href="#" @click.prevent="$dispatch('open-auth-modal', { view: 'login' })">
-                        {{ __('Log in') }}
-                    </x-responsive-nav-link>
-                     <x-responsive-nav-link href="#" @click.prevent="$dispatch('open-auth-modal', { view: 'register' })">
-                        {{ __('Register') }}
-                    </x-responsive-nav-link>
-                </div>
+            <div class="px-4">
+                <x-responsive-nav-link href="#" @click="openModal('login')">
+                    {{ __('Log in') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link href="#" @click="openModal('register')">
+                    {{ __('Register') }}
+                </x-responsive-nav-link>
+             </div>
             @endguest
             @auth
                 <div class="px-4">
