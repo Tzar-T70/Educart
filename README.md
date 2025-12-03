@@ -1,31 +1,32 @@
 # Educart
 
 <img src="/public/images/Logo_transparent.png" alt="Educart Logo" width="200">
-A student-focused e-commerce site made using the Laravel framework as part of the CS2TP module at Aston University.
+A student-focused e-commerce site made using the Laravel framework, as part of the CS2TP module at Aston University.
 
 ### Badges
 
 ![](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
 ![](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Made_With-VS_Code-blue)
 
 ## Roadmap
 
 ### Functional Requirements
-- User Authentication
+- User Authentication ✅
 
-    - OTP verification codes over email
-- Profile Management
+    - OTP verification codes over email ✅
+- Profile Management✅
 
-    - Change email
-    - Update password
-    - Delete account
+    - Change email ✅
+    - Update password ✅
+    - Delete account ✅
 - Content Management
 
-    - Admin dashboard
+    - Admin dashboard✅
     - Edit product details
 - Customers can search for products
 - Users can fill out working contact forms
