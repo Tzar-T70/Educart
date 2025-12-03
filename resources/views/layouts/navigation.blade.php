@@ -4,8 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                <div class="shrink-0 flex items-center-x-2">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                        <img src ="/images/Logo_transparent.png" alt= "Educart Logo" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-brand-dark-blue">Educart</span>
                     </a>
                 </div>
