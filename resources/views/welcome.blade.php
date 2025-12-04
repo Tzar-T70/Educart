@@ -81,7 +81,7 @@
                     </div>
                 </a>
                 <!-- Mens -->
-                <a href="/categories/mens" class ="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"> 
+                <a href="/categories/fashion/mens" class ="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"> 
                   <img src="https://placehold.co/400x300/285570/faf7f6?text=Mens" alt="mens" class="w-full h-48 object-cover">
                   <div class="p-6">
                     <h3 class="text-xl font-semibold text-brand-dark">Mens</h3>
@@ -89,24 +89,24 @@
                   </div>
                  </a>
                  <!-- Womens -->
-                    <a href="/categories/womens" class ="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"> 
+                    <a href="/categories/fashion/womens" class ="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"> 
                         <img src="https://placehold.co/400x300/285570/faf7f6?text=Womens" alt="womens" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-brand-dark">Womens</h3>
                             <p class="mt-2 text-brand-dark">Dresses, Shirts, Trousers and more!.</p>
                         </div>
                     </a>
-                <!-- Accessories -->
-                     <a href="/categories/accessories" class="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/400x300/285570/faf7f6?text=Accessories" alt="Accessories" class="w-full h-48 object-cover">
+                <!-- Stationery -->
+                     <a href="/categories/stationery" class="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
+                        <img src="https://placehold.co/400x300/285570/faf7f6?text=Stationery" alt="Stationery" class="w-full h-48 object-cover">
                         <div class="p-6">
-                             <h3 class="text-xl font-semibold text-brand-dark">Accessories</h3>
-                             <p class="mt-2 text-brand-dark">Watches, Bags, Jewellery and more!</p>
+                             <h3 class="text-xl font-semibold text-brand-dark">Stationery</h3>
+                             <p class="mt-2 text-brand-dark">Notebooks, Pens, Whiteboards and more!</p>
                         </div>
                     </a>
 
                 <!-- Home -->
-                    <a href="/categories/home" class="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
+                    <a href="/categories/dorm-life" class="card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
                         <img src="https://placehold.co/400x300/285570/faf7f6?text=Home" alt="Home" class="w-full h-48 object-cover">
                         <div class="p-6">
                            <h3 class="text-xl font-semibold text-brand-dark">Home</h3>
