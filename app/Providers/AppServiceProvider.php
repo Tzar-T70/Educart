@@ -23,8 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \Illuminate\Support\Facades\View::composer('layouts.navigation', function ($view) {
-            $view->with('categories', \App\Models\Category::with('subCategories')->get());
-        });
+        //
     }
 }
