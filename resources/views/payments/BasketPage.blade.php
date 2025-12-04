@@ -13,9 +13,9 @@
 
             {{-- Basket Items --}}
             <div class="md:col-span-2 bg-white rounded-xl shadow p-6">
-                @if(count($basket) > 0)
-                    @foreach($basket as $id => $item)
-                        <x-basket-item :id="$id" :item="$item" />
+                @if($cart && $cart->items->count() > 0)
+                    @foreach($cart->items as $item)
+                        <x-basket-item :id="$item->cart_item_id" :item="$item" />
                     @endforeach
                 @else
                     <p class="text-brand-dark text-lg">Your basket is empty.</p>

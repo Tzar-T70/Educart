@@ -65,7 +65,9 @@
 
                             <!-- Actions -->
                             <div class="mt-auto space-y-4 pt-6 border-t border-gray-200">
-                                <div class="flex items-center space-x-4">
+                                <form action="{{ route('basket.add') }}" method="POST" class="flex items-center space-x-4">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <div class="w-32">
                                         <label for="quantity" class="sr-only">Quantity</label>
                                         <select id="quantity" name="quantity" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-dark-blue focus:ring-brand-dark-blue sm:text-sm">
@@ -76,10 +78,10 @@
                                             <option>5</option>
                                         </select>
                                     </div>
-                                    <button class="flex-1 bg-brand-dark-blue text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition shadow-sm">
+                                    <button type="submit" class="flex-1 bg-brand-dark-blue text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition shadow-sm">
                                         Add to Cart
                                     </button>
-                                </div>
+                                </form>
                                 <button class="w-full bg-brand-beige text-brand-dark-blue px-6 py-3 rounded-md font-medium hover:bg-brand-gray transition">
                                     Buy Now
                                 </button>
