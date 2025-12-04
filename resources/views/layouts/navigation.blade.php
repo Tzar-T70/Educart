@@ -35,6 +35,16 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <a href="{{ route('basket.index') }}" 
+                class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue mr-4">
+                    Basket
+                </a>
+
+                <a href="/checkout" 
+                class="text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md mr-6">
+                    Checkout
+                </a>
+
                 @guest
                     <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
                         {{ __('Log in') }}
@@ -101,7 +111,16 @@
                     </x-responsive-nav-link>
                 @endforeach
             @endforeach
+            <x-responsive-nav-link :href="route('basket.index')">
+                Basket
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="/checkout">
+                Checkout
+            </x-responsive-nav-link>
+
         </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-brand-gray">
