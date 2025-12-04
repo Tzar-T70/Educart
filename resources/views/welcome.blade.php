@@ -62,10 +62,6 @@
                     </main>
                 </div>
             </div>
-            <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
-                     <img src="/images/Logo_transparent.png" alt="E-shop products" class="h-80 w-auto object-contain">
-                </div>
-         </div>
         <!-- Product Grid -->
         <div class="py-12 bg-brand-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
