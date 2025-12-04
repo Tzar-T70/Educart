@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/womens', function () {
     return view('womens');
@@ -40,12 +44,40 @@ Route::get('/accessories', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'admin'])->name('dashboard');
+
+
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/categories/{category:slug}/{subCategory:slug}', [CategoryController::class, 'showSubCategory'])->name('subcategories.show');
+Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/basket', [BasketController::class, 'index'])->name('basket.index');
+Route::post('/basket/update/{id}', [BasketController::class, 'updateQuantity'])->name('basket.update');
+Route::post('/basket/remove/{id}', [BasketController::class, 'remove'])->name('basket.remove');
+
+
+Route::get('/checkout', function () {
+
+    $basket = session('basket', []);
+
+    $subtotal = collect($basket)->sum(function ($item) {
+        return ($item['price'] ?? 0) * ($item['quantity'] ?? 1);
+    });
+
+    return view('payments.Checkout', [
+        'basket' => $basket,
+        'subtotal' => $subtotal,
+    ]);
+});
+
+// Process checkout
+Route::post('/checkout', [CheckoutController::class, 'process'])
+    ->name('checkout.process');
 
 require __DIR__.'/auth.php';

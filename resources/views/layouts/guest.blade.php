@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,24 +7,41 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <body class="font-sans text-brand-dark antialiased">
+        <div 
+            class="min-h-screen flex flex-col bg-brand-cream"
+            x-data="authModal({ 
+                open: {{ $errors->any() && session('auth_modal_form') ? 'true' : 'false' }}, 
+                initialView: '{{ session('auth_modal_form', 'login') }}' 
+            })"
+            x-init="
+                @if (session('status'))
+                    Alpine.store('toast').show('{{ session('status') }}', 'success');
+                @endif
+            "
+        >
+            @include('layouts.navigation')
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <main class="flex-grow">
                 {{ $slot }}
-            </div>
+            </main>
+
+            <x-auth-modal />
+
+            <footer class="bg-brand-dark-blue text-brand-gray">
+                <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+                    <p>&copy; {{ date('Y') }} Educart. All rights reserved.</p>
+                    <p class="mt-2 text-sm">Smart Shopping for Your Academic Life</p>
+                </div>
+            </footer>
+            
+            <x-toast />
+            
         </div>
     </body>
 </html>

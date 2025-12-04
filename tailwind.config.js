@@ -13,6 +13,13 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+                        colors: {
+                'brand-dark-blue': '#285570',
+                'brand-beige': '#e3ded7',
+                'brand-cream': '#faf7f6',
+                'brand-gray': '#cbcac7',
+                'brand-dark': '#333333',
+            }
         },
     },
 
