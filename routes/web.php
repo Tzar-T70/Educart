@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,21 @@ Route::post('/basket/remove/{id}', [BasketController::class, 'remove'])->name('b
 
 
 Route::get('/checkout', function () {
-    return view('payments.Checkout');
+
+    $basket = session('basket', []);
+
+    $subtotal = collect($basket)->sum(function ($item) {
+        return ($item['price'] ?? 0) * ($item['quantity'] ?? 1);
+    });
+
+    return view('payments.Checkout', [
+        'basket' => $basket,
+        'subtotal' => $subtotal,
+    ]);
 });
+
+// Process checkout
+Route::post('/checkout', [CheckoutController::class, 'process'])
+    ->name('checkout.process');
+
 require __DIR__.'/auth.php';
