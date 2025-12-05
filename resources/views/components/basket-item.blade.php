@@ -4,16 +4,16 @@
 
     {{-- Product Image --}}
     <img 
-        src="{{ $item['image'] }}" 
-        alt="{{ $item['name'] }}"
+        src="{{ $item->product->image_url }}" 
+        alt="{{ $item->product->name }}"
         class="w-20 h-20 object-cover rounded-lg shadow-md"
     >
 
     {{-- Product Info --}}
     <div class="flex-1 ml-4">
-        <h3 class="text-lg font-semibold text-brand-dark">{{ $item['name'] }}</h3>
+        <h3 class="text-lg font-semibold text-brand-dark">{{ $item->product->name }}</h3>
         <p class="text-brand-dark-blue font-medium">
-            £{{ number_format($item['price'], 2) }}
+            £{{ number_format($item->price, 2) }}
         </p>
     </div>
 
@@ -23,7 +23,7 @@
         <input 
             type="number" 
             name="quantity" 
-            value="{{ $item['quantity'] }}"
+            value="{{ $item->quantity }}"
             min="1"
             class="w-16 border-brand-gray focus:border-brand-dark-blue rounded-lg"
         >
@@ -34,7 +34,7 @@
 
     {{-- Total Price --}}
     <div class="w-20 text-right font-semibold text-brand-dark">
-        £{{ number_format($item['price'] * $item['quantity'], 2) }}
+        £{{ number_format($item->price * $item->quantity, 2) }}
     </div>
 
     {{-- Remove --}}

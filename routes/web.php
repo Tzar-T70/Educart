@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/basket', [BasketController::class, 'index'])->name('basket.index');
+Route::post('/basket/add', [BasketController::class, 'add'])->name('basket.add');
 Route::post('/basket/update/{id}', [BasketController::class, 'updateQuantity'])->name('basket.update');
 Route::post('/basket/remove/{id}', [BasketController::class, 'remove'])->name('basket.remove');
 

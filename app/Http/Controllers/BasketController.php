@@ -4,96 +4,125 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Cart;
+use App\Models\CartItem;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
     public function index()
     {
-        // Dummy data (replace later with DB)
-        $basket = session()->get('basket', [
-            1 => [
-                'name' => 'Maths Textbook',
-                'price' => 12.99,
-                'quantity' => 1,
-                'image' => '/images/products/book1.jpg',
-            ],
-            2 => [
-                'name' => 'Science Workbook',
-                'price' => 8.49,
-                'quantity' => 2,
-                'image' => '/images/products/book2.jpg',
-            ],
-            3 => [
-                'name' => 'Laptop Bag',
-                'price' => 24.00,
-                'quantity' => 1,
-                'image' => '/images/products/bag1.jpg',
-            ],
-        ]);
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login');
+        }
 
-        session()->put('basket', $basket);
+        $cart = Cart::with('items.product')->firstOrCreate(['user_id' => $user->id]);
+        
+        // Calculate subtotal
+        $subtotal = $cart->items->sum(function($item) {
+            return $item->price * $item->quantity;
+        });
 
-        // Subtotal
-        $subtotal = collect($basket)->sum(fn($item) => $item['price'] * $item['quantity']);
+        // Update cart total
+        $cart->total = $subtotal;
+        $cart->save();
 
-        return view('payments.BasketPage', compact('basket', 'subtotal'));
+        return view('payments.BasketPage', compact('cart', 'subtotal'));
     }
 
     public function updateQuantity(Request $request, $id)
     {
-        $basket = session()->get('basket');
+        $request->validate([
+            'quantity' => 'required|integer|min:1'
+        ]);
 
-        if (isset($basket[$id])) {
-            $basket[$id]['quantity'] = max(1, (int) $request->quantity);
-            session()->put('basket', $basket);
+        $item = CartItem::findOrFail($id);
+        
+        // Ensure user owns this cart item
+        if ($item->cart->user_id !== Auth::id()) {
+            abort(403);
         }
 
-        return back();
+        $item->quantity = $request->quantity;
+        $item->subtotal = $item->price * $request->quantity;
+        $item->save();
+
+        // Update cart total
+        $this->updateCartTotal($item->cart);
+
+        return back()->with('success', 'Cart updated!');
     }
 
     public function remove($id)
     {
-        $basket = session()->get('basket');
+        $item = CartItem::findOrFail($id);
 
-        if (isset($basket[$id])) {
-            unset($basket[$id]);
-            session()->put('basket', $basket);
+        // Ensure user owns this cart item
+        if ($item->cart->user_id !== Auth::id()) {
+            abort(403);
         }
 
-        return back();
+        $cart = $item->cart;
+        $item->delete();
+
+        // Update cart total
+        $this->updateCartTotal($cart);
+
+        return back()->with('success', 'Item removed from basket!');
     }
 
-
-    public function add(Request $request, Product $product)
+    public function add(Request $request)
     {
-        $basket = session()->get('basket', []);
+        \Illuminate\Support\Facades\Log::info('BasketController@add called', $request->all());
 
-        if (isset($basket[$product->id])) {
-            $basket[$product->id]['quantity']++;
-        } else {
-            $basket[$product->id] = [
-                'name' => $product->name,
-                'price' => $product->price,
-                'quantity' => 1
-            ];
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'quantity' => 'required|integer|min:1'
+        ]);
+
+        $user = Auth::user();
+        if (!$user) {
+            \Illuminate\Support\Facades\Log::info('User not logged in, redirecting to login');
+            return redirect()->route('login');
         }
 
-        session()->put('basket', $basket);
+        \Illuminate\Support\Facades\Log::info('User logged in: ' . $user->id);
 
+        $product = Product::findOrFail($request->product_id);
+        $cart = Cart::firstOrCreate(['user_id' => $user->id]);
+
+        \Illuminate\Support\Facades\Log::info('Cart found/created: ' . $cart->cart_id);
+
+        $item = CartItem::where('cart_id', $cart->cart_id)
+                        ->where('product_id', $product->id)
+                        ->first();
+
+        if ($item) {
+            \Illuminate\Support\Facades\Log::info('Updating existing item: ' . $item->cart_item_id);
+            $item->quantity += $request->quantity;
+            $item->subtotal = $item->quantity * $item->price;
+            $item->save();
+        } else {
+            \Illuminate\Support\Facades\Log::info('Creating new item');
+            CartItem::create([
+                'cart_id' => $cart->cart_id,
+                'product_id' => $product->id,
+                'quantity' => $request->quantity,
+                'price' => $product->price,
+                'subtotal' => $product->price * $request->quantity,
+            ]);
+        }
+
+        $this->updateCartTotal($cart);
+
+        \Illuminate\Support\Facades\Log::info('Item added, redirecting back');
         return back()->with('success', 'Item added to basket!');
     }
 
-    public function update(Request $request, Product $product)
+    private function updateCartTotal(Cart $cart)
     {
-        $basket = session()->get('basket', []);
-
-        if (isset($basket[$product->id])) {
-            $basket[$product->id]['quantity'] = $request->quantity;
-            session()->put('basket', $basket);
-        }
-
-        return back();
+        $cart->total = $cart->items()->sum('subtotal');
+        $cart->save();
     }
-
-    
 }
