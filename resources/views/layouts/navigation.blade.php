@@ -36,6 +36,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                @auth
                 <a href="{{ route('basket.index') }}" 
                 class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue mr-4">
                     Basket
@@ -45,6 +46,7 @@
                 class="text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md mr-6">
                     Checkout
                 </a>
+                @endauth
 
                 @guest
                     <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
@@ -112,6 +114,8 @@
                     </x-responsive-nav-link>
                 @endforeach
             @endforeach
+            
+            @auth
             <x-responsive-nav-link :href="route('basket.index')">
                 Basket
             </x-responsive-nav-link>
@@ -119,6 +123,7 @@
             <x-responsive-nav-link href="/checkout">
                 Checkout
             </x-responsive-nav-link>
+            @endauth
 
         </div>
 
