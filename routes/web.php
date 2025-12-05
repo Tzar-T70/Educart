@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,16 @@ use App\Http\Controllers\CheckoutController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/about-us', function () {
+    return view('about-us');   // If it's resources/views/about-us.blade.php
+}) ->name('about-us');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -57,8 +67,5 @@ Route::get('/checkout', function () {
     ]);
 });
 
-// Process checkout
-Route::post('/checkout', [CheckoutController::class, 'process'])
-    ->name('checkout.process');
 
 require __DIR__.'/auth.php';

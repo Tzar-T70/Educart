@@ -13,6 +13,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
+
+                    <!-- About Us Link -->
+                    <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                        About Us
+                    </x-nav-link>
+
+                    <!-- Contact Us Link -->
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        Contact Us
+                    </x-nav-link>
+
                     @foreach($categories as $category)
                         <div class="relative group h-full flex items-center">
                             <x-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
@@ -104,6 +115,17 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+
+            <!-- Responsive About Us Link -->
+            <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                About Us
+            </x-responsive-nav-link>
+
+            <!-- Responsive Contact Us Link -->
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                Contact Us
+            </x-responsive-nav-link>
+
             @foreach($categories as $category)
                 <x-responsive-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
                     {{ $category->name }}
