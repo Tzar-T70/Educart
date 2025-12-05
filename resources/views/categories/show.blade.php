@@ -19,7 +19,7 @@
                         
                         @if($subCategory->products->count() > 0)
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                @foreach($subCategory->products as $product)
+                                @foreach($subCategory->products->take(4) as $product)
                                     <x-product-card :product="$product" :category="$category" :subCategory="$subCategory" />
                                 @endforeach
                             </div>
