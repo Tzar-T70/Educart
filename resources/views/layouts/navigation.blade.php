@@ -4,8 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                <div class="shrink-0 flex items-center-x-2">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                        <img src ="/images/Logo_transparent.png" alt= "Educart Logo" class="h-8 w-auto">
                         <span class="text-2xl font-bold text-brand-dark-blue">Educart</span>
                     </a>
                 </div>
@@ -35,6 +36,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                @auth
                 <a href="{{ route('basket.index') }}" 
                 class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue mr-4">
                     Basket
@@ -44,6 +46,7 @@
                 class="text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md mr-6">
                     Checkout
                 </a>
+                @endauth
 
                 @guest
                     <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
@@ -111,6 +114,8 @@
                     </x-responsive-nav-link>
                 @endforeach
             @endforeach
+            
+            @auth
             <x-responsive-nav-link :href="route('basket.index')">
                 Basket
             </x-responsive-nav-link>
@@ -118,6 +123,7 @@
             <x-responsive-nav-link href="/checkout">
                 Checkout
             </x-responsive-nav-link>
+            @endauth
 
         </div>
 
