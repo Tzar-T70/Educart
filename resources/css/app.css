@@ -32,28 +32,53 @@ html {
 
 
 a {
-    transition: color 0.3s ease; /* fixed syntax */
+    position: relative;
+    text-decoration: none;
 }
-
+a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #e67e22;
+    transition: width 0.3s ease;
+}
+a:hover::after {
+    width: 100%;
+}
 
 button {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #e67e22;
-    border-color: #d35400; 
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    border-color: #d35400;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.4);
 }
+
 
 .hero h1, .hero h2, .product-grid h3 {
     color: #e67e22;
 }
 
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .card:hover {
-    background-color: #e67e22;
-    color: #fff;
-    border-color: #e67e22;
-    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
-    transition: all 0.3s ease;
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+}
+
+
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
