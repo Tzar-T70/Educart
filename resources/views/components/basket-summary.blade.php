@@ -1,8 +1,8 @@
 @props(['subtotal'])
 
-<div class="bg-white rounded-xl shadow p-6 space-y-6">
+<div class="bg-[var(--card-bg)] rounded-xl shadow p-6 space-y-6">
 
-    <h3 class="text-xl font-semibold text-brand-dark-blue">
+    <h3 class="text-xl font-semibold text-[var(--brand-dark-blue)]">
         Order Summary
     </h3>
 
@@ -32,7 +32,7 @@
     {{-- Checkout Button --}}
     <a
         href="/checkout"
-        class="block text-center bg-brand-dark-blue text-white py-3 rounded-lg font-semibold hover:bg-opacity-90"
+        class="block text-center bg-[var(--brand-dark-blue)] text-white py-3 rounded-lg font-semibold hover:bg-opacity-90"
     >
         Proceed to Checkout
     </a>

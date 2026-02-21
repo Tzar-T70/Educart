@@ -1,11 +1,11 @@
 <x-guest-layout>
-    <main class="flex-grow bg-brand-beige text-brand-dark">
+<main class="flex-grow bg-[var(--bg)] text-[var(--text)]">
 
         <!-- Hero Section -->
-        <section class="py-16 bg-brand-beige text-center hero">
+        <section class="py-16 bg-[var(--card-bg)] text-center hero">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark">
-                    About <span class="text-brand-dark-blue">Educart</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[var(--text)]">
+                    About <span class="text-[var(--brand-dark-blue)]">Educart</span>
                 </h1>
                 <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
                     Making student life smarter, cheaper, and easier — one purchase at a time.
@@ -14,10 +14,10 @@
         </section>
 
         <!-- Who We Are -->
-        <section class="py-16 bg-brand-cream">
+        <section class="py-16 bg-[var(--card-bg)]">
             <div class="max-w-5xl mx-auto px-6 lg:px-8">
-                <div class="bg-white rounded-lg shadow-lg p-10 card">
-                    <h2 class="text-3xl font-bold text-brand-dark">Who We Are</h2>
+                <div class="bg-[var(--bg)] rounded-lg shadow-lg p-10 card">
+                    <h2 class="text-3xl font-bold text-[var(--text)]">Who We Are</h2>
                     <p class="mt-4 text-lg leading-relaxed">
                         Educart is built for students aged 18–25 who want a smarter, more affordable 
                         shopping experience. We gather discounts, curate essentials, and bring everything 
@@ -29,14 +29,14 @@
         </section>
 
         <!-- What We Offer -->
-        <section class="py-16 bg-brand-beige">
+        <section class="py-16 bg-[var(--card-bg)]">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <h2 class="text-3xl font-extrabold text-center">What We Offer</h2>
 
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                     <!-- Menswear -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 card">
+                    <div class="bg-[var(--card)] text-[var(--text)] shadow-lg rounded-lg p-8 card">
                         <h3 class="text-2xl font-semibold">Menswear</h3>
                         <ul class="mt-4 space-y-2">
                             <li>Jumpers & shirts</li>
@@ -46,7 +46,7 @@
                     </div>
 
                     <!-- Womenswear -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 card">
+                    <div class="bg-[var(--card)] text-[var(--text)] shadow-lg rounded-lg p-8 card">
                         <h3 class="text-2xl font-semibold">Womenswear</h3>
                         <ul class="mt-4 space-y-2">
                             <li>Dresses & tops</li>
@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- Accessories -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 card">
+                    <div class="bg-[var(--card)] text-[var(--text)] shadow-lg rounded-lg p-8 card">
                         <h3 class="text-2xl font-semibold">Accessories</h3>
                         <ul class="mt-4 space-y-2">
                             <li>Bags, hats & scarves</li>
@@ -66,7 +66,7 @@
                     </div>
 
                     <!-- Tech -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 card">
+                    <div class="bg-[var(--card)] text-[var(--text)] shadow-lg rounded-lg p-8 card">
                         <h3 class="text-2xl font-semibold">Tech & Stationery</h3>
                         <ul class="mt-4 space-y-2">
                             <li>Headphones, tablets & laptops</li>
@@ -75,7 +75,7 @@
                     </div>
 
                     <!-- Home -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 card">
+                    <div class="bg-[var(--card)] text-[var(--text)] shadow-lg rounded-lg p-8 card">
                         <h3 class="text-2xl font-semibold">Home & Living</h3>
                         <ul class="mt-4 space-y-2">
                             <li>Bedding & decor</li>
@@ -89,9 +89,9 @@
         </section>
 
         <!-- Mission -->
-        <section class="py-16 bg-brand-cream">
+        <section class="py-16 bg-[var(--card-bg)]">
             <div class="max-w-5xl mx-auto px-6 lg:px-8">
-                <div class="bg-white rounded-lg shadow-lg p-10 card">
+                <div class="bg-[var(--bg)] rounded-lg shadow-lg p-10 card">
                     <h2 class="text-3xl font-bold">Our Mission</h2>
                     <p class="mt-4 text-lg leading-relaxed">
                         Our goal is to support students by offering everything they need to make academic 
@@ -102,9 +102,9 @@
         </section>
 
         <!-- Promise -->
-        <section class="py-16 bg-brand-beige">
+        <section class="py-16 bg-[var(--card-bg)]">
             <div class="max-w-5xl mx-auto px-6 lg:px-8">
-                <div class="bg-white rounded-lg shadow-lg p-10 card">
+                <div class="bg-[var(--bg)] rounded-lg shadow-lg p-10 card">
                     <h2 class="text-3xl font-bold">Our Promise</h2>
                     <p class="mt-4 text-lg leading-relaxed">
                         Educart isn’t just an online shop — it’s a student-first platform built on 

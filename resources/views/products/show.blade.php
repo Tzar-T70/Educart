@@ -5,18 +5,18 @@
             <span class="text-gray-400 mx-2">/</span>
             <a href="{{ route('subcategories.show', [$product->subCategory->category, $product->subCategory]) }}" class="hover:underline text-gray-500">{{ $product->subCategory->name }}</a>
             <span class="text-gray-400 mx-2">/</span>
-            <span class="text-brand-dark-blue">{{ $product->name }}</span>
+            <span class="text-[var(--brand-dark-blue)]">{{ $product->name }}</span>
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-[var(--card-bg)] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 lg:p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <!-- Product Image -->
                         <div class="space-y-4">
-                            <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
+                            <div class="aspect-w-4 aspect-h-3 bg-[var(--bg)] rounded-lg overflow-hidden border border-[var(--brand-beige)]">
                                 @if($product->image_url)
                                     <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="object-cover object-center w-full h-full">
                                 @else
@@ -26,7 +26,7 @@
                             <!-- Thumbnail placeholders -->
                             <div class="grid grid-cols-4 gap-4">
                                 @for($i = 0; $i < 4; $i++)
-                                    <div class="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md overflow-hidden border border-gray-200 cursor-pointer hover:border-brand-dark-blue">
+                                    <div class="aspect-w-1 aspect-h-1 bg-[var(--bg)] rounded-md overflow-hidden border border-[var(--brand-beige)] cursor-pointer hover:border-[var(--brand-dark-blue)]">
                                         @if($product->image_url)
                                             <img src="{{ $product->image_url }}" class="object-cover w-full h-full opacity-75 hover:opacity-100">
                                         @endif
@@ -38,9 +38,9 @@
                         <!-- Product Details -->
                         <div class="flex flex-col">
                             @if($product->brand)
-                                <h2 class="text-sm font-semibold text-brand-dark-blue uppercase tracking-wide mb-2">{{ $product->brand }}</h2>
+                                <h2 class="text-sm font-semibold text-[var(--brand-dark-blue)] uppercase tracking-wide mb-2">{{ $product->brand }}</h2>
                             @endif
-                            <h1 class="text-3xl font-bold text-brand-dark mb-4">{{ $product->name }}</h1>
+                            <h1 class="text-3xl font-bold text-[var(--text)] mb-4">{{ $product->name }}</h1>
                             
                             <!-- Ratings -->
                             <div class="flex items-center mb-6">
@@ -52,7 +52,7 @@
                                 <span class="ml-2 text-gray-600 text-sm">(128 reviews)</span>
                             </div>
 
-                            <div class="text-2xl font-bold text-brand-dark mb-6">£{{ number_format($product->price, 2) }}</div>
+                            <div class="text-2xl font-bold text-[var(--text)] mb-6">£{{ number_format($product->price, 2) }}</div>
 
                             <div class="prose prose-sm text-gray-600 mb-8">
                                 <p>{{ $product->description }}</p>
@@ -64,7 +64,7 @@
                             </div>
 
                             <!-- Actions -->
-                            <div class="mt-auto space-y-4 pt-6 border-t border-gray-200">
+                            <div class="mt-auto space-y-4 pt-6 border-t border-[var(--brand-beige)]">
                                 <form action="{{ route('basket.add') }}" method="POST" class="flex items-center space-x-4">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -82,7 +82,7 @@
                                         Add to Cart
                                     </button>
                                 </form>
-                                <button class="w-full bg-brand-beige text-brand-dark-blue px-6 py-3 rounded-md font-medium hover:bg-brand-gray transition">
+                                <button class="w-full bg-brand-beige text-[var(--brand-dark-blue)] px-6 py-3 rounded-md font-medium hover:bg-brand-gray transition">
                                     Buy Now
                                 </button>
                             </div>
@@ -90,13 +90,13 @@
                     </div>
 
                     <!-- Reviews Section -->
-                    <div class="mt-16 border-t border-gray-200 pt-12">
-                        <h3 class="text-2xl font-bold text-brand-dark mb-8">Customer Reviews</h3>
+                    <div class="mt-16 border-t border-[var(--brand-beige)] pt-12">
+                        <h3 class="text-2xl font-bold text-[var(--text)] mb-8">Customer Reviews</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                             <!-- Rating Breakdown -->
                             <div class="col-span-1">
                                 <div class="flex items-center mb-4">
-                                    <span class="text-4xl font-bold text-brand-dark mr-4">4.8</span>
+                                    <span class="text-4xl font-bold text-[var(--text)] mr-4">4.8</span>
                                     <div class="flex text-yellow-400">
                                         @for($i = 0; $i < 5; $i++)
                                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>

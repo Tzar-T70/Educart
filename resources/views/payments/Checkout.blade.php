@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-3xl font-bold text-brand-dark-blue">
+        <h2 class="text-3xl font-bold text-[var(--brand-dark-blue)]">
             Checkout
         </h2>
     </x-slot>
@@ -8,8 +8,8 @@
     <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-           
-            <div class="md:col-span-2 bg-white rounded-xl shadow p-6">
+ 
+            <div class="md:col-span-2 bg-[var(--card-bg)] rounded-xl shadow p-6">
                 <h3 class="text-xl font-semibold mb-4">Billing Information</h3>
 
                 <form method="POST" action="{{ route('checkout.process') }}">

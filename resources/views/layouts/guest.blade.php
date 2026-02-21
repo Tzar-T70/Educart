@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,18 +12,18 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-brand-dark antialiased">
+    <body class="font-sans antialiased">
         <div 
-            class="min-h-screen flex flex-col bg-brand-cream"
+            class="min-h-screen bg-[var(--bg)] text-[var(--text)]"           
             x-data="authModal({ 
-                open: {{ $errors->any() && session('auth_modal_form') ? 'true' : 'false' }}, 
-                initialView: '{{ session('auth_modal_form', 'login') }}' 
-            })"
-            x-init="
-                @if (session('status'))
-                    Alpine.store('toast').show('{{ session('status') }}', 'success');
-                @endif
-            "
+                    open: {{ $errors->any() && session('auth_modal_form') ? 'true' : 'false' }}, 
+                    initialView: '{{ session('auth_modal_form', 'login') }}' 
+                })"
+                x-init="
+                    @if (session('status'))
+                        Alpine.store('toast').show('{{ session('status') }}', 'success');
+                    @endif
+                "
         >
             @include('layouts.navigation')
 
@@ -33,7 +33,7 @@
 
             <x-auth-modal />
 
-            <footer class="bg-brand-dark-blue text-brand-gray">
+            <footer class="bg-[var(--brand-dark-blue)] dark:bg-gray-900 text-[var(--brand-gray)] dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
                 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
                     <p>&copy; {{ date('Y') }} Educart. All rights reserved.</p>
                     <p class="mt-2 text-sm">Smart Shopping for Your Academic Life</p>
@@ -43,5 +43,13 @@
             <x-toast />
             
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggle = document.getElementById('theme-toggle');
+                toggle?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                });
+            });
+        </script>
     </body>
 </html>

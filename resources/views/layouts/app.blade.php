@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
     </head>
     <body class="font-sans antialiased">
         <div 
-            class="min-h-screen bg-brand-cream" 
+            class="min-h-screen bg-[var(--bg)] text-[var(--text)]" 
             x-data="authModal({ 
                 open: {{ $errors->any() && session('auth_modal_form') ? 'true' : 'false' }}, 
                 initialView: '{{ session('auth_modal_form', 'login') }}' 
@@ -25,7 +25,7 @@
             @include('layouts.navigation')
 
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-[var(--card-bg)] shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -38,5 +38,10 @@
 
             <x-auth-modal />
         </div>
+        <script>
+         document.getElementById('theme-toggle')?.addEventListener('click', () => {
+         document.documentElement.classList.toggle('dark');
+          });
+          </script>
     </body>
 </html>

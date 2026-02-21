@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="w-full max-w-md mx-auto mt-20">
 
-        <div class="bg-brand-cream p-6 sm:p-8 shadow-xl rounded-lg text-gray-900">
+        <div class="bg-[var(--card-bg)] p-6 sm:p-8 shadow-xl rounded-lg text-gray-900">
 
             <h2 class="text-xl font-semibold mb-6 text-center text-brand-dark-blue">
                 Please enter your new password
