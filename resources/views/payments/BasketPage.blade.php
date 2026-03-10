@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <x-slot name="header">
-        <h2 class="text-3xl font-bold text-[var(--brand-dark-blue)]">
+        <h2 class="text-3xl font-bold text-[var(--text)]">
             Your Basket
         </h2>
     </x-slot>

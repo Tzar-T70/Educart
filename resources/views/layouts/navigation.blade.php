@@ -67,11 +67,6 @@
                         {{ __('Register') }}
                     </button>
                 @endguest
-                    <button id="theme-toggle" 
-                    class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md"> 
-                    Theme
-                    </button>
-
 
                 @auth
                     <x-dropdown align="right" width="48">
@@ -191,8 +186,5 @@
                 </div>
             @endauth
         </div>
-    <button id="theme-toggle" class="px-3 py-2 rounded text-white">
-        Toggle Theme
-    </button>
     </div>
 </nav>
