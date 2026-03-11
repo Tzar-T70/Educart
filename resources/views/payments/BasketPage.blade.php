@@ -1,6 +1,28 @@
 <x-app-layout>
+    <x-app-layout>
 
-    {{-- Optional page header (matches your site's style) --}}
+    @php
+        
+        if(session()->has('basket') && !session()->has('basket_expires_at')) {
+            session(['basket_expires_at' => now()->addMinutes(15)]);
+        }
+
+        
+        if(session()->has('basket_expires_at') && now()->greaterThan(session('basket_expires_at'))) {
+            session()->forget(['basket', 'basket_expires_at']);
+            $basket = [];
+        }
+    @endphp
+
+    <x-slot name="header">
+        <h2 class="text-3xl font-bold text-brand-dark-blue">
+            Your Basket
+        </h2>
+    </x-slot>
+   
+        
+     
+
     <x-slot name="header">
         <h2 class="text-3xl font-bold text-brand-dark-blue">
             Your Basket
