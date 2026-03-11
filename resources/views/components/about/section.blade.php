@@ -1,4 +1,4 @@
-@props(['bg' => 'bg-white'])
+@props(['bg' => 'bg-[var(--card-bg)]'])
 
 <section class="py-16 {{ $bg }}">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">

@@ -1,22 +1,22 @@
 <x-guest-layout>
-    <main class="flex-grow bg-brand-beige text-brand-dark">
+    <main class="flex-grow bg-[var(--bg)] text-[var(--text)]">
 
         <!-- Header -->
-        <section class="py-16 bg-brand-beige text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark">
-                Contact <span class="text-brand-dark-blue">Us</span>
+        <section class="py-16 bg-[var(--card-bg)] text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[var(--text)]">
+                Contact <span class="text-[var(--brand-dark-blue)]">Us</span>
             </h1>
-            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-brand-dark">
+            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-[var(--text)]">
                 If you have any issues, questions, or concerns, feel free to get in touch using the form below.
             </p>
         </section>
 
         <!-- Contact Form -->
-        <section class="py-16 bg-brand-cream">
+        <section class="py-16 bg-[var(--card-bg)]">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <div class="bg-white shadow-lg rounded-lg p-10">
+                <div class="bg-[var(--bg)] shadow-lg rounded-lg p-10">
 
-                    <h2 class="text-2xl font-bold text-brand-dark mb-6">
+                    <h2 class="text-2xl font-bold text-[var(--text)] mb-6">
                         Send Us a Message
                     </h2>
 
@@ -33,7 +33,7 @@
 
                         <!-- Name -->
                         <div>
-                            <label class="block text-sm font-medium text-brand-dark">Your Name</label>
+                            <label class="block text-sm font-medium text-[var(--text)]">Your Name</label>
                             <input 
                                 type="text" 
                                 name="name" 
@@ -47,7 +47,7 @@
 
                         <!-- Email -->
                         <div>
-                            <label class="block text-sm font-medium text-brand-dark">Your Email</label>
+                            <label class="block text-sm font-medium text-[var(--text)]">Your Email</label>
                             <input 
                                 type="email" 
                                 name="email" 
@@ -61,7 +61,7 @@
 
                         <!-- Message -->
                         <div>
-                            <label class="block text-sm font-medium text-brand-dark">Message</label>
+                            <label class="block text-sm font-medium text-[var(--text)]">Message</label>
                             <textarea 
                                 name="message" 
                                 rows="5" 
@@ -77,7 +77,7 @@
                         <div>
                             <button 
                                 type="submit"
-                                class="bg-brand-dark-blue text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition"
+                                class="bg-[var(--accent)] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition"
                             >
                                 Send Message
                             </button>
@@ -89,12 +89,12 @@
         </section>
 
         <!-- Email list (optional below form) -->
-        <section class="pb-16 bg-brand-beige">
+        <section class="pb-16 bg-[var(--bg)]">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-brand-dark mb-5">Support Emails</h2>
+                <h2 class="text-2xl font-bold text-[var(--text)] mb-5">Support Emails</h2>
 
-                <div class="bg-white shadow-lg rounded-lg p-10">
-                    <ul class="space-y-4 text-lg text-brand-dark">
+                <div class="bg-[var(--card-bg)] shadow-lg rounded-lg p-10">
+                    <ul class="space-y-4 text-lg text-[var(--text)]">
                         <li><span class="font-semibold">Email 1:</span> 240066404@aston.ac.uk</li>
                         <li><span class="font-semibold">Email 2:</span> …</li>
                         <li><span class="font-semibold">Email 3:</span> …</li>
