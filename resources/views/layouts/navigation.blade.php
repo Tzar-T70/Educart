@@ -15,18 +15,18 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
 
                     <!-- About Us Link -->
-                    <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                    <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('about-us')" :active="request()->routeIs('about-us')">
                         About Us
                     </x-nav-link>
 
                     <!-- Contact Us Link -->
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                    <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('contact')" :active="request()->routeIs('contact')">
                         Contact Us
                     </x-nav-link>
 
                     @foreach($categories as $category)
                         <div class="relative group h-full flex items-center">
-                            <x-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
+                            <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
                                 {{ $category->name }}
                             </x-nav-link>
                             
@@ -83,7 +83,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.edit')">
+                            <x-dropdown-link class="dark:text-white dark:hover:text-blue-300" :href="route('profile.edit')">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
@@ -91,7 +91,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link :href="route('logout')"
+                                <x-dropdown-link class="dark:text-white dark:hover:text-blue-300" :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                     {{ __('Log Out') }}
