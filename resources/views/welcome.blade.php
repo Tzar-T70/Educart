@@ -3,11 +3,12 @@
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Hero Section -->
-         <div class="bg-[var(--bg)]">            
+         <div class="relative bg-[var(--bg)] overflow-hidden">
+            <img src ="/images/Aesthetic Workspace.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Background">
+            <div class="relative">
             <div class="max-w-7xl mx-auto">
-                <div class="relative z-10 pb-8 bg-[var(--bg)] sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-20">                                 
-
                     <!-- Main hero content -->
+                    <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-20">                    
                     <div class="relative pt-6 px-4 sm:px-6 lg:px-8"></div>
                     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div class="sm:text-center lg:text-left">
@@ -60,6 +61,8 @@
                     </main>
                 </div>
             </div>
+        </div>
+</div>
         <!-- Product Grid -->
          <div class="py-12 bg-[var(--bg)]">
              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
