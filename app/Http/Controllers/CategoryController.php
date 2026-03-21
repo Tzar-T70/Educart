@@ -14,9 +14,23 @@ class CategoryController extends Controller
         return view('categories.show', compact('category'));
     }
 
-    public function showSubCategory(Category $category, SubCategory $subCategory)
-    {
-        $subCategory->load('products');
-        return view('subcategories.show', compact('category', 'subCategory'));
+public function showSubCategory(Category $category, SubCategory $subCategory, Request $request)
+{
+    $sort = $request->query('sort');
+    $search = $request->query('search');
+
+    $productsQuery = $subCategory->products();
+
+    if ($search) {
+        $productsQuery->where('name', 'like', '%' . $search . '%');
     }
+
+    if ($sort === 'price_asc') {
+        $productsQuery->orderBy('price', 'asc');
+    }
+
+    $products = $productsQuery->get();
+
+    return view('subcategories.show', compact('category', 'subCategory', 'products'));
+}
 }
