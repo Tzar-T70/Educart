@@ -45,6 +45,13 @@
         value="{{ request('max_price') }}"
         class="w-28 rounded-md border-gray-300 shadow-sm focus:border-brand-dark-blue focus:ring-brand-dark-blue"
     >
+    @if($subCategory->slug === 'footwear')
+    <select name="gender" class="rounded-md border-gray-300 shadow-sm focus:border-brand-dark-blue focus:ring-brand-dark-blue">
+        <option value="">All</option>
+        <option value="mens" {{ request('gender') === 'mens' ? 'selected' : '' }}>Mens</option>
+        <option value="womens" {{ request('gender') === 'womens' ? 'selected' : '' }}>Womens</option>
+    </select>
+    @endif
 
     <!-- Sort dropdown -->
      <select name="sort" onchange="this.form.submit()" class="rounded-md border-gray-300 shadow-sm focus:border-brand-dark-blue focus:ring-brand-dark-blue">

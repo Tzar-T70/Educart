@@ -504,131 +504,150 @@ class ShopSeeder extends Seeder
        'image_url' => 'https://i.pinimg.com/736x/92/31/63/9231631bc2283a4077b2b3a9be5b67cd.jpg',
       'brand' => 'Coach'
      ]);
-        // Footwear
-        $footwear->products()->updateOrCreate(['slug' => 'running-shoes'], [
-            'name' => 'High-Performance Running Shoes',
-            'description' => 'Lightweight shoes for long-distance running.',
-            'price' => 60.00,
-            'image_url' => 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSc8VheUvO_jb4mMjiVfTbQY8xzd9qRJm91-CgI0NeqYMdz6GwtbChFXd1l54EbDJIPBVI-yCbMMVBJ7MUfk9t2fVEG1cVqOQ582SAbi1tPZk2sdadG1Bly5KESLO6DoBapuygUhtc&usqp=CAc',
-            'brand' => 'Nike'
-        ]);
-        $footwear->products()->updateOrCreate(['slug' => 'leather-boots'], [
-            'name' => 'Classic Leather Ankle Boots',
-            'description' => 'Durable and stylish leather boots.',
-            'price' => 80.00,
-            'image_url' => 'https://cdn.media.amplience.net/i/drmartens/12308001.80.jpg', 
-            'brand' => 'Doc Martens'
-        ]);
-        $footwear->products()->updateOrCreate(['slug' => 'm1000-faux-leather-trainers'], [
-        'name' => 'M1000 Faux Leather Trainers',
-         'description' => 'Retro-inspired M1000 trainers with sleek panelling, breathable mesh and ABZORB cushioning.',
-           'price' => 75.00,
-            'image_url' => 'https://i.pinimg.com/736x/d3/a6/70/d3a670b44b21cb49bb00103a0ffbed28.jpg',
-             'brand' => 'JD Sports'
-            
-         ]);
+     // Footwear
+    $footwear->products()->updateOrCreate(['slug' => 'running-shoes'], [
+    'name' => 'High-Performance Running Shoes',
+    'description' => 'Lightweight shoes for long-distance running.',
+    'price' => 60.00,
+    'image_url' => 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSc8VheUvO_jb4mMjiVfTbQY8xzd9qRJm91-CgI0NeqYMdz6GwtbChFXd1l54EbDJIPBVI-yCbMMVBJ7MUfk9t2fVEG1cVqOQ582SAbi1tPZk2sdadG1Bly5KESLO6DoBapuygUhtc&usqp=CAc',
+    'brand' => 'Nike',
+    'gender' => 'mens'
+      ]);
 
-        $footwear->products()->updateOrCreate(['slug' => 'chocolate-leather-trucker-boots'], [
-         'name' => 'Chocolate Leather Trucker Boots',
-          'description' => 'Matte chocolate leather trucker boots with a pull-on design and mid block heel.',
-         'price' => 25.00,
-          'image_url' => 'https://i.pinimg.com/736x/8d/ef/e8/8defe85443619cf9c80624e44e14d1a1.jpg',
-           'brand' => 'ASOS'
-        ]);
-        $footwear->products()->updateOrCreate(['slug' => 'classic-black-formal-shoes'], [
-        'name' => 'Classic Black Formal Shoes',
-        'description' => 'Elegant black formal shoes perfect for business and formal occasions.',
-        'price' => 30.00,
-         'image_url' => 'https://i.pinimg.com/736x/e2/f2/b6/e2f2b6e2e8236c25aaf5f0498d056f7e.jpg',
-        'brand' => 'Clarks'
-         ]);
+    $footwear->products()->updateOrCreate(['slug' => 'leather-boots'], [
+    'name' => 'Classic Leather Ankle Boots',
+    'description' => 'Durable and stylish leather boots.',
+    'price' => 80.00,
+    'image_url' => 'https://cdn.media.amplience.net/i/drmartens/12308001.80.jpg',
+    'brand' => 'Doc Martens',
+    'gender' => 'mens'
+     ]);
 
-         $footwear->products()->updateOrCreate(['slug' => 'red-patent-slingback-heels'], [
-         'name' => 'Red Patent Slingback Heels',
-          'description' => 'Stylish red slingback heels with a glossy finish.',
-          'price' => 28.00,
-          'image_url' => 'https://i.pinimg.com/736x/01/76/7a/01767a9c2e51eb298c1dd9a48b404818.jpg',
-            'brand' => 'ZARA'
-        ]);
+    $footwear->products()->updateOrCreate(['slug' => 'm1000-faux-leather-trainers'], [
+    'name' => 'M1000 Faux Leather Trainers',
+    'description' => 'Retro-inspired M1000 trainers with sleek panelling, breathable mesh and ABZORB cushioning.',
+    'price' => 75.00,
+    'image_url' => 'https://i.pinimg.com/736x/d3/a6/70/d3a670b44b21cb49bb00103a0ffbed28.jpg',
+    'brand' => 'JD Sports',
+    'gender' => 'mens'
+     ]);
 
-        $footwear->products()->updateOrCreate(['slug' => 'brown-mesh-heeled-shoes'], [
-        'name' => 'Brown Mesh Heeled Shoes',
-        'description' => 'Elegant brown mesh heels with delicate detailing.',
-       'price' => 17.00,
-       'image_url' => 'https://i.pinimg.com/1200x/11/b9/1a/11b91a450c82ca191da108c5938aaca8.jpg',
-       'brand' => 'ASOS'
-         ]);
+     $footwear->products()->updateOrCreate(['slug' => 'chocolate-leather-trucker-boots'], [
+    'name' => 'Chocolate Leather Trucker Boots',
+    'description' => 'Matte chocolate leather trucker boots with a pull-on design and mid block heel.',
+    'price' => 25.00,
+    'image_url' => 'https://i.pinimg.com/736x/8d/ef/e8/8defe85443619cf9c80624e44e14d1a1.jpg',
+    'brand' => 'ASOS',
+    'gender' => 'womens'
+     ]);
 
-       $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
-        'name' => 'Black Ballerina Flats',
-       'description' => 'Comfortable black ballerina flats with a sleek design.',
-       'price' => 14.99,
-       'image_url' => 'https://i.pinimg.com/736x/b0/4a/4b/b04a4bb6c0db6e16e79daa69b5c05eb9.jpg',
-       'brand' => 'H&M'
-       ]);
-       $footwear->products()->updateOrCreate(['slug' => 'nike-brown-mesh-trainers'], [
-      'name' => 'Nike Brown Mesh Trainers',
-      'description' => 'Breathable brown mesh trainers with cushioned sole and modern sporty design for everyday comfort.',
-      'price' => 65.00,
-      'image_url' => 'https://i.pinimg.com/736x/a3/08/45/a30845ce53c769c8945ea8fbc08ec284.jpg',
-      'brand' => 'Nike'
+     $footwear->products()->updateOrCreate(['slug' => 'classic-black-formal-shoes'], [
+    'name' => 'Classic Black Formal Shoes',
+    'description' => 'Elegant black formal shoes perfect for business and formal occasions.',
+    'price' => 30.00,
+    'image_url' => 'https://i.pinimg.com/736x/e2/f2/b6/e2f2b6e2e8236c25aaf5f0498d056f7e.jpg',
+    'brand' => 'Clarks',
+    'gender' => 'mens'
+     ]);
+
+    $footwear->products()->updateOrCreate(['slug' => 'red-patent-slingback-heels'], [
+    'name' => 'Red Patent Slingback Heels',
+    'description' => 'Stylish red slingback heels with a glossy finish.',
+    'price' => 28.00,
+    'image_url' => 'https://i.pinimg.com/736x/01/76/7a/01767a9c2e51eb298c1dd9a48b404818.jpg',
+    'brand' => 'ZARA',
+    'gender' => 'womens'
     ]);
 
-    $footwear->products()->updateOrCreate(['slug' => 'chunky-grey-beige-trainers'], [
-     'name' => 'Chunky Grey & Beige Trainers',
-     'description' => 'Chunky retro-style trainers with grey and beige tones, offering comfort and a bold streetwear look.',
-     'price' => 70.00,
-     'image_url' => 'https://i.pinimg.com/736x/c1/f3/b3/c1f3b381f6835b3b9523173797adce07.jpg',
-     'brand' => 'Reebok'
+    $footwear->products()->updateOrCreate(['slug' => 'brown-mesh-heeled-shoes'], [
+    'name' => 'Brown Mesh Heeled Shoes',
+    'description' => 'Elegant brown mesh heels with delicate detailing.',
+    'price' => 17.00,
+    'image_url' => 'https://i.pinimg.com/1200x/11/b9/1a/11b91a450c82ca191da108c5938aaca8.jpg',
+    'brand' => 'ASOS',
+    'gender' => 'womens'
+    ]);
+
+     $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
+    'name' => 'Black Ballerina Flats',
+    'description' => 'Comfortable black ballerina flats with a sleek design.',
+    'price' => 14.99,
+    'image_url' => 'https://i.pinimg.com/736x/b0/4a/4b/b04a4bb6c0db6e16e79daa69b5c05eb9.jpg',
+    'brand' => 'H&M',
+    'gender' => 'womens'
      ]);
-  
+
+     $footwear->products()->updateOrCreate(['slug' => 'nike-brown-mesh-trainers'], [
+    'name' => 'Nike Brown Mesh Trainers',
+    'description' => 'Breathable brown mesh trainers with cushioned sole and modern sporty design for everyday comfort.',
+    'price' => 65.00,
+    'image_url' => 'https://i.pinimg.com/736x/a3/08/45/a30845ce53c769c8945ea8fbc08ec284.jpg',
+    'brand' => 'Nike',
+    'gender' => 'mens'
+      ]);
+
+     $footwear->products()->updateOrCreate(['slug' => 'chunky-grey-beige-trainers'], [
+    'name' => 'Chunky Grey & Beige Trainers',
+    'description' => 'Chunky retro-style trainers with grey and beige tones, offering comfort and a bold streetwear look.',
+    'price' => 70.00,
+    'image_url' => 'https://i.pinimg.com/736x/c1/f3/b3/c1f3b381f6835b3b9523173797adce07.jpg',
+    'brand' => 'Reebok',
+    'gender' => 'mens'
+    ]);
+
      $footwear->products()->updateOrCreate(['slug' => 'adidas-samba-classic'], [
     'name' => 'Adidas Samba Classic',
     'description' => 'Iconic Adidas Samba trainers featuring black and white leather with a timeless design.',
     'price' => 75.00,
     'image_url' => 'https://i.pinimg.com/1200x/21/89/e7/2189e7a8653629ffd7a1907bc0e7449f.jpg',
-    'brand' => 'Adidas'
-      ]);
+    'brand' => 'Adidas',
+    'gender' => 'mens'
+    ]);
 
-    $footwear->products()->updateOrCreate(['slug' => 'new-balance-574-blue'], [
-      'name' => 'New Balance 574 Trainers',
-      'description' => 'Classic New Balance 574 trainers in blue with premium comfort and everyday versatility.',
-      'price' => 80.00,
-      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-ml574-core-lace-up-trainers~77079501FRSC.jpg',
-      'brand' => 'New Balance'
-      ]);
+     $footwear->products()->updateOrCreate(['slug' => 'new-balance-574-blue'], [
+    'name' => 'New Balance 574 Trainers',
+    'description' => 'Classic New Balance 574 trainers in blue with premium comfort and everyday versatility.',
+    'price' => 80.00,
+    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-ml574-core-lace-up-trainers~77079501FRSC.jpg',
+    'brand' => 'New Balance',
+    'gender' => 'mens'
+       ]);
 
-      $footwear->products()->updateOrCreate(['slug' => 'adidas-gazelle-blue'], [
-      'name' => 'Adidas Gazelle Indoor Trainers (Blue)',
-      'description' => 'Classic Adidas Gazelle trainers in blue suede with a timeless design and gum sole.',
-      'price' => 85.00,
-      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-originals-gazelle-indoor-trainers~74036061FRSC.jpg',
-      'brand' => 'Adidas'
+     $footwear->products()->updateOrCreate(['slug' => 'adidas-gazelle-blue'], [
+    'name' => 'Adidas Gazelle Indoor Trainers (Blue)',
+    'description' => 'Classic Adidas Gazelle trainers in blue suede with a timeless design and gum sole.',
+    'price' => 85.00,
+    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-originals-gazelle-indoor-trainers~74036061FRSC.jpg',
+    'brand' => 'Adidas',
+    'gender' => 'womens'
      ]);
 
      $footwear->products()->updateOrCreate(['slug' => 'adidas-grey-ballerina'], [
-      'name' => 'Adidas Grey Ballerina Trainers',
-      'description' => 'Lightweight grey ballerina-style trainers with a sleek fit and flexible comfort.',
-      'price' => 60.00,
-      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-sportswear-barreda-mary-jane-ballerina-trainers~72931807FRSC.jpg',
-      'brand' => 'Adidas'
+    'name' => 'Adidas Grey Ballerina Trainers',
+    'description' => 'Lightweight grey ballerina-style trainers with a sleek fit and flexible comfort.',
+    'price' => 60.00,
+    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-sportswear-barreda-mary-jane-ballerina-trainers~72931807FRSC.jpg',
+    'brand' => 'Adidas',
+    'gender' => 'womens'
      ]);
 
      $footwear->products()->updateOrCreate(['slug' => 'new-balance-373-burgundy'], [
-      'name' => 'New Balance 373 Trainers (Burgundy)',
-      'description' => 'Stylish burgundy trainers with classic New Balance comfort and everyday wearability.',
-      'price' => 70.00,
-      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-373-lace-up-trainers~78683251FRSC.jpg',
-      'brand' => 'New Balance'
+    'name' => 'New Balance 373 Trainers (Burgundy)',
+    'description' => 'Stylish burgundy trainers with classic New Balance comfort and everyday wearability.',
+    'price' => 70.00,
+    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-373-lace-up-trainers~78683251FRSC.jpg',
+    'brand' => 'New Balance',
+    'gender' => 'womens'
      ]);
 
-    $footwear->products()->updateOrCreate(['slug' => 'new-balance-beige-leopard'], [
-      'name' => 'New Balance Beige Leopard Trainers',
-      'description' => 'Trendy beige trainers with subtle leopard print detail and cushioned sole for all-day comfort.',
-      'price' => 75.00,
-      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-non-slip-breathable-trainers~75644309FRSC.jpg',
-      'brand' => 'New Balance'
-    ]);
+      $footwear->products()->updateOrCreate(['slug' => 'new-balance-beige-leopard'], [
+    'name' => 'New Balance Beige Leopard Trainers',
+    'description' => 'Trendy beige trainers with subtle leopard print detail and cushioned sole for all-day comfort.',
+    'price' => 75.00,
+    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-non-slip-breathable-trainers~75644309FRSC.jpg',
+    'brand' => 'New Balance',
+    'gender' => 'womens'
+     ]);
 
 
         // --- 3. Dorm Life Category
