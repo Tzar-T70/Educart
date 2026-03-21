@@ -14,7 +14,7 @@ class CategoryController extends Controller
         return view('categories.show', compact('category'));
     }
 
-public function showSubCategory(Category $category, SubCategory $subCategory, Request $request)
+   public function showSubCategory(Category $category, SubCategory $subCategory, Request $request)
 {
     $sort = $request->query('sort');
     $search = $request->query('search');
@@ -27,6 +27,26 @@ public function showSubCategory(Category $category, SubCategory $subCategory, Re
 
     if ($sort === 'price_asc') {
         $productsQuery->orderBy('price', 'asc');
+    }
+
+    if ($sort === 'created_desc') {
+        $productsQuery->orderBy('created_at', 'desc');
+    }
+
+    if ($sort === 'created_asc') {
+        $productsQuery->orderBy('created_at', 'asc');
+    }
+
+    if ($sort === 'name_asc') {
+        $productsQuery->orderBy('name', 'asc');
+    }
+
+    if ($sort === 'name_desc') {
+        $productsQuery->orderBy('name', 'desc');
+    }
+
+    if ($sort === 'popular') {
+        $productsQuery->orderBy('created_at', 'desc');
     }
 
     $products = $productsQuery->get();
