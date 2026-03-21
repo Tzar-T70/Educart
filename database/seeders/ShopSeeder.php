@@ -50,6 +50,37 @@ class ShopSeeder extends Seeder
             'image_url' => 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'brand' => 'Apple'
         ]);
+        $laptops->products()->updateOrCreate(['slug' => 'silver-macbook-style-laptop'], [
+      'name' => 'Silver MacBook Style Laptop',
+      'description' => 'Sleek silver laptop with a minimalist design, smooth performance, and lightweight build for everyday productivity.',
+      'price' => 649.99,
+      'image_url' => 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=1170&auto=format&fit=crop',
+      'brand' => 'Apple'
+       ]);
+
+      $laptops->products()->updateOrCreate(['slug' => 'creative-display-laptop'], [
+      'name' => 'Creative Display Laptop',
+      'description' => 'High-resolution laptop with vibrant display, perfect for creative work, editing, and multitasking.',
+      'price' => 350.00,
+       'image_url' => 'https://images.unsplash.com/photo-1511385348-a52b4a160dc2?q=80&w=1207&auto=format&fit=crop',
+      'brand' => 'Apple'
+     ]);
+
+    $laptops->products()->updateOrCreate(['slug' => 'ultra-thin-purple-display-laptop'], [
+      'name' => 'Ultra Thin Purple Display Laptop',
+      'description' => 'Ultra-slim laptop with a stunning purple display, designed for speed, portability, and modern performance.',
+      'price' => 699.99,
+      'image_url' => 'https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1965&auto=format&fit=crop',
+      'brand' => 'Apple'
+    ]);
+
+     $laptops->products()->updateOrCreate(['slug' => 'macbook-pro-retina-display'], [
+      'name' => 'MacBook Pro Retina Display',
+      'description' => 'Powerful MacBook with Retina display, fast processing, and premium build quality for professionals.',
+      'price' => 900.00,
+      'image_url' => 'https://images.unsplash.com/photo-1580522154071-c6ca47a859ad?q=80&w=1170&auto=format&fit=crop',
+      'brand' => 'Apple'
+    ]);
 
         // Phones
         $phones->products()->updateOrCreate(['slug' => 'galaxy-s24'], [
@@ -76,11 +107,42 @@ class ShopSeeder extends Seeder
        $phones->products()->updateOrCreate(['slug' => 'iphone-16e'], [
          'name' => 'iPhone 16e',
          'description' => 'Next generation iPhone with a sleek design, advanced camera system, and powerful performance for everyday use.',
-         'price' => 799.99,
+         'price' => 649.99,
          'image_url' => 'https://b2c-contenthub.com/wp-content/uploads/2025/02/iPhone-16e-main-image.png',
           'brand' => 'Apple'
-]);
+            
+          ]);
+        $phones->products()->updateOrCreate(['slug' => 'iphone-16-plus-blue'], [
+       'name' => 'iPhone 16 Plus (Ultramarine)',
+       'description' => 'Stylish ultramarine iPhone with a large display, powerful performance, and advanced camera system.',
+       'price' => 750.99,
+       'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/apple-iphone-16-plus-128gb-ultramarine~61D221FRSP.jpg',
+       'brand' => 'Apple'
+         ]);
 
+        $phones->products()->updateOrCreate(['slug' => 'samsung-a26-white'], [
+        'name' => 'Samsung Galaxy A26 5G',
+        'description' => 'Affordable 5G smartphone with smooth performance, large display, and long battery life.',
+        'price' => 250.00,
+        'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/samsung-galaxy-a26-5g-256gb-sim-free-mobile-phone---white~43X864FRSP.jpg',
+        'brand' => 'Samsung'
+         ]);
+
+       $phones->products()->updateOrCreate(['slug' => 'iphone-17e-black'], [
+        'name' => 'iPhone 17e (Black)',
+        'description' => 'Next-generation iPhone with sleek black finish, enhanced performance, and improved camera technology.',
+         'price' => 800.00,
+        'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/apple-iphone-17e-512gb---black~91S196FRSP.jpg',
+        'brand' => 'Apple'
+        ]);
+
+       $phones->products()->updateOrCreate(['slug' => 'iphone-17-pro-max-orange'], [
+       'name' => 'iPhone 17 Pro Max (Cosmic Orange)',
+        'description' => 'Premium flagship iPhone with a bold cosmic orange finish, top-tier performance, and pro-level camera system.',
+        'price' => 850.00,
+        'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/apple-iphone-17-pro-max-256gb---cosmic-orange~76X004FRSC.jpg',
+        'brand' => 'Apple'
+       ]);
         // Accessories
         $accessories->products()->updateOrCreate(['slug' => 'wireless-earbuds'], [
             'name' => 'Wireless Noise Cancelling Earbuds',
@@ -97,12 +159,12 @@ class ShopSeeder extends Seeder
             'brand' => 'Anker'
         ]);
         $accessories->products()->updateOrCreate(['slug' => 'noise-cancelling-bluetooth-headphones'], [
-    'name' => 'Noise-Cancelling Bluetooth Headphones',
-    'description' => 'Wireless Bluetooth headphones with noise cancellation, 35-hour battery life and quick charge.',
-    'price' => 40.00,
-    'image_url' => 'https://i.pinimg.com/736x/e5/4e/df/e54edf3cf8e9d4a0bdd4ef8e1c427dcb.jpg',
-    'brand' => 'Sony'
-]);
+        'name' => 'Noise-Cancelling Bluetooth Headphones',
+        'description' => 'Wireless Bluetooth headphones with noise cancellation, 35-hour battery life and quick charge.',
+        'price' => 40.00,
+        'image_url' => 'https://i.pinimg.com/736x/e5/4e/df/e54edf3cf8e9d4a0bdd4ef8e1c427dcb.jpg',
+        'brand' => 'Sony'
+       ]);
 
          $accessories->products()->updateOrCreate(['slug' => 'powerbank'], [
            'name' => 'Powerbank',
@@ -119,6 +181,29 @@ class ShopSeeder extends Seeder
              'image_url' => 'https://i.pinimg.com/736x/ed/a7/5e/eda75e5bf9ba138423183eaf166a1432.jpg',
              'brand' => 'cruzer'
        ]);
+         $accessories->products()->updateOrCreate(['slug' => 'reflex-active-smart-watch'], [
+         'name' => 'Reflex Active Smart Watch',
+         'description' => 'Modern smart watch with fitness tracking, heart rate monitoring, and sleek black strap design.',
+         'price' => 49.99,
+         'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/reflex-active-series-13-black-strap-smart-watch~83T512FRSP.jpg',
+         'brand' => 'Reflex Active'
+         ]);
+
+        $accessories->products()->updateOrCreate(['slug' => 'apple-airtag'], [
+        'name' => 'Apple AirTag',
+         'description' => 'Keep track of your belongings with Apple AirTag using precision tracking and Find My network.',
+         'price' => 29.99,
+         'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/apple-airtag-(1-pack)~46H165FRSP.jpg',
+        'brand' => 'Apple'
+        ]);
+ 
+        $accessories->products()->updateOrCreate(['slug' => 'jbl-flip-7-speaker'], [
+         'name' => 'JBL Flip 7 Bluetooth Speaker',
+        'description' => 'Portable waterproof speaker with powerful sound and long battery life, perfect for music on the go.',
+        'price' => 89.99,
+        'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/jbl-flip-7-speaker---blue~29B849FRSP.jpg',
+        'brand' => 'JBL'
+        ]);
 
         // --- 2. Fashion Category
         $fashion = Category::updateOrCreate(['slug' => 'fashion'], ['name' => 'Fashion']);
@@ -467,20 +552,84 @@ class ShopSeeder extends Seeder
         ]);
 
         $footwear->products()->updateOrCreate(['slug' => 'brown-mesh-heeled-shoes'], [
-       'name' => 'Brown Mesh Heeled Shoes',
-       'description' => 'Elegant brown mesh heels with delicate detailing.',
-      'price' => 17.00,
-      'image_url' => 'https://i.pinimg.com/1200x/11/b9/1a/11b91a450c82ca191da108c5938aaca8.jpg',
-      'brand' => 'ASOS'
+        'name' => 'Brown Mesh Heeled Shoes',
+        'description' => 'Elegant brown mesh heels with delicate detailing.',
+       'price' => 17.00,
+       'image_url' => 'https://i.pinimg.com/1200x/11/b9/1a/11b91a450c82ca191da108c5938aaca8.jpg',
+       'brand' => 'ASOS'
+         ]);
+
+       $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
+        'name' => 'Black Ballerina Flats',
+       'description' => 'Comfortable black ballerina flats with a sleek design.',
+       'price' => 14.99,
+       'image_url' => 'https://i.pinimg.com/736x/b0/4a/4b/b04a4bb6c0db6e16e79daa69b5c05eb9.jpg',
+       'brand' => 'H&M'
+       ]);
+       $footwear->products()->updateOrCreate(['slug' => 'nike-brown-mesh-trainers'], [
+      'name' => 'Nike Brown Mesh Trainers',
+      'description' => 'Breathable brown mesh trainers with cushioned sole and modern sporty design for everyday comfort.',
+      'price' => 65.00,
+      'image_url' => 'https://i.pinimg.com/736x/a3/08/45/a30845ce53c769c8945ea8fbc08ec284.jpg',
+      'brand' => 'Nike'
+    ]);
+
+    $footwear->products()->updateOrCreate(['slug' => 'chunky-grey-beige-trainers'], [
+     'name' => 'Chunky Grey & Beige Trainers',
+     'description' => 'Chunky retro-style trainers with grey and beige tones, offering comfort and a bold streetwear look.',
+     'price' => 70.00,
+     'image_url' => 'https://i.pinimg.com/736x/c1/f3/b3/c1f3b381f6835b3b9523173797adce07.jpg',
+     'brand' => 'Reebok'
+     ]);
+  
+     $footwear->products()->updateOrCreate(['slug' => 'adidas-samba-classic'], [
+    'name' => 'Adidas Samba Classic',
+    'description' => 'Iconic Adidas Samba trainers featuring black and white leather with a timeless design.',
+    'price' => 75.00,
+    'image_url' => 'https://i.pinimg.com/1200x/21/89/e7/2189e7a8653629ffd7a1907bc0e7449f.jpg',
+    'brand' => 'Adidas'
       ]);
 
-     $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
-      'name' => 'Black Ballerina Flats',
-      'description' => 'Comfortable black ballerina flats with a sleek design.',
-      'price' => 14.99,
-      'image_url' => 'https://i.pinimg.com/736x/b0/4a/4b/b04a4bb6c0db6e16e79daa69b5c05eb9.jpg',
-      'brand' => 'H&M'
+    $footwear->products()->updateOrCreate(['slug' => 'new-balance-574-blue'], [
+      'name' => 'New Balance 574 Trainers',
+      'description' => 'Classic New Balance 574 trainers in blue with premium comfort and everyday versatility.',
+      'price' => 80.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-ml574-core-lace-up-trainers~77079501FRSC.jpg',
+      'brand' => 'New Balance'
+      ]);
+
+      $footwear->products()->updateOrCreate(['slug' => 'adidas-gazelle-blue'], [
+      'name' => 'Adidas Gazelle Indoor Trainers (Blue)',
+      'description' => 'Classic Adidas Gazelle trainers in blue suede with a timeless design and gum sole.',
+      'price' => 85.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-originals-gazelle-indoor-trainers~74036061FRSC.jpg',
+      'brand' => 'Adidas'
      ]);
+
+     $footwear->products()->updateOrCreate(['slug' => 'adidas-grey-ballerina'], [
+      'name' => 'Adidas Grey Ballerina Trainers',
+      'description' => 'Lightweight grey ballerina-style trainers with a sleek fit and flexible comfort.',
+      'price' => 60.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-sportswear-barreda-mary-jane-ballerina-trainers~72931807FRSC.jpg',
+      'brand' => 'Adidas'
+     ]);
+
+     $footwear->products()->updateOrCreate(['slug' => 'new-balance-373-burgundy'], [
+      'name' => 'New Balance 373 Trainers (Burgundy)',
+      'description' => 'Stylish burgundy trainers with classic New Balance comfort and everyday wearability.',
+      'price' => 70.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-373-lace-up-trainers~78683251FRSC.jpg',
+      'brand' => 'New Balance'
+     ]);
+
+    $footwear->products()->updateOrCreate(['slug' => 'new-balance-beige-leopard'], [
+      'name' => 'New Balance Beige Leopard Trainers',
+      'description' => 'Trendy beige trainers with subtle leopard print detail and cushioned sole for all-day comfort.',
+      'price' => 75.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-non-slip-breathable-trainers~75644309FRSC.jpg',
+      'brand' => 'New Balance'
+    ]);
+
 
         // --- 3. Dorm Life Category
         $dorm = Category::updateOrCreate(['slug' => 'dorm-life'], ['name' => 'Dorm Life']);
@@ -497,11 +646,11 @@ class ShopSeeder extends Seeder
             'brand' => 'IKEA'
         ]);
         $bedding->products()->updateOrCreate(['slug' => 'extra-long-sheets'], [
-    'name' => 'Neutral Stripe Cover Set',
-    'description' => 'Soft and breathable striped cotton bedding set.',
-    'price' => 11.50,
-    'image_url' => 'https://target.scene7.com/is/image/Target/GUEST_24cf91dc-37a8-49fc-a63a-b99121904ecd?wid=300&hei=300&fmt=pjpeg',
-    'brand' => 'Threshold'
+       'name' => 'Neutral Stripe Cover Set',
+       'description' => 'Soft and breathable striped cotton bedding set.',
+       'price' => 11.50,
+       'image_url' => 'https://target.scene7.com/is/image/Target/GUEST_24cf91dc-37a8-49fc-a63a-b99121904ecd?wid=300&hei=300&fmt=pjpeg',
+      'brand' => 'Threshold'
         ]);
         $bedding->products()->updateOrCreate(['slug' => 'premium-white-pillows'], [
         'name' => 'Premium White Pillows (Set of 2)',
@@ -513,10 +662,10 @@ class ShopSeeder extends Seeder
 
         $bedding->products()->updateOrCreate(['slug' => 'cozy-white-fleece-blanket'], [
        'name' => 'Cozy White Fleece Blanket',
-      'description' => 'Warm and ultra soft fleece blanket ',
-      'price' => 12.99,
-      'image_url' => 'https://i.pinimg.com/1200x/ad/51/09/ad510913206d6ba9735382ffea1624b2.jpg',
-      'brand' => 'Home Comfort'
+       'description' => 'Warm and ultra soft fleece blanket ',
+       'price' => 12.99,
+       'image_url' => 'https://i.pinimg.com/1200x/ad/51/09/ad510913206d6ba9735382ffea1624b2.jpg',
+       'brand' => 'Home Comfort'
       ]);
 
       $bedding->products()->updateOrCreate(['slug' => 'soft-pink-bedding-set'], [
@@ -568,50 +717,50 @@ class ShopSeeder extends Seeder
             'brand' => 'RCA'
         ]);
         $decor->products()->updateOrCreate(['slug' => 'decorative-plant-pot'], [
-    'name' => 'Decorative Plant Pot Set',
-    'description' => 'Minimal plant pot set to add a fresh and calming vibe to your dorm.',
-    'price' => 7.00,
-    'image_url' => 'https://i.pinimg.com/1200x/e1/5f/74/e15f7474bfb98c68d42f60435eb31916.jpg',
-    'brand' => 'Home Style'
-       ]);
+         'name' => 'Decorative Plant Pot Set',
+          'description' => 'Minimal plant pot set to add a fresh and calming vibe to your dorm.',
+           'price' => 7.00,
+           'image_url' => 'https://i.pinimg.com/1200x/e1/5f/74/e15f7474bfb98c68d42f60435eb31916.jpg',
+            'brand' => 'Home Style'
+          ]);
 
       $decor->products()->updateOrCreate(['slug' => 'pink-glass-candle-set'], [
-    'name' => 'Pink Glass Candle Set',
-    'description' => 'Aesthetic scented candles in glass jars.',
-    'price' => 9.00,
-    'image_url' => 'https://i.pinimg.com/1200x/5b/ae/93/5bae93bf5da90b68ed0c3bcb9c3b99b7.jpg',
-    'brand' => 'Glow Home'
+       'name' => 'Pink Glass Candle Set',
+      'description' => 'Aesthetic scented candles in glass jars.',
+      'price' => 9.00,
+      'image_url' => 'https://i.pinimg.com/1200x/5b/ae/93/5bae93bf5da90b68ed0c3bcb9c3b99b7.jpg',
+      'brand' => 'Glow Home'
      ]);
 
      $decor->products()->updateOrCreate(['slug' => 'papasan-chair'], [
-    'name' => 'Papasan Lounge Chair',
-    'description' => 'Super comfy cushioned chair perfect for relaxing or studying.',
-    'price' => 50.00,
-    'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/desser-papasan-chair~86W152FRSP_COL_CLOUD.jpg',
-    'brand' => 'IKEA'
-    ]);
+     'name' => 'Papasan Lounge Chair',
+     'description' => 'Super comfy cushioned chair perfect for relaxing or studying.',
+     'price' => 50.00,
+   'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/desser-papasan-chair~86W152FRSP_COL_CLOUD.jpg',
+     'brand' => 'IKEA'
+     ]);
 
-     $decor->products()->updateOrCreate(['slug' => 'hollywood-vanity-mirror'], [
+      $decor->products()->updateOrCreate(['slug' => 'hollywood-vanity-mirror'], [
     'name' => 'Hollywood Vanity Mirror',
     'description' => 'LED light-up mirror with adjustable brightness.',
     'price' => 25.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/carmen-c85050wht-hollywood-9-bulb-vanity-mirror-with-metal-frame---white~83H406FRSP.jpg',
     'brand' => 'Carmen'
      ]);
-    $decor->products()->updateOrCreate(['slug' => 'space-exploration-poster'], [
-    'name' => 'Space Exploration Poster',
-    'description' => 'Aesthetic space-themed poster a modern cosmic vibe.',
-    'price' => 9.99,
-    'image_url' => 'https://i.pinimg.com/736x/8f/0c/01/8f0c014bdd8efc1957cbfc34b34206da.jpg',
+      $decor->products()->updateOrCreate(['slug' => 'space-exploration-poster'], [
+     'name' => 'Space Exploration Poster',
+     'description' => 'Aesthetic space-themed poster a modern cosmic vibe.',
+      'price' => 9.99,
+     'image_url' => 'https://i.pinimg.com/736x/8f/0c/01/8f0c014bdd8efc1957cbfc34b34206da.jpg',
     'brand' => 'Wall Art Co'
-   ]);
+    ]);
 
-   $decor->products()->updateOrCreate(['slug' => 'radiohead-vintage-poster'], [
-    'name' => 'Radiohead Vintage Poster',
-    'description' => 'Retro Radiohead tour poster for a classic indie aesthetic.',
-    'price' => 11.99,
-    'image_url' => 'https://i.pinimg.com/736x/0c/5f/d2/0c5fd217d5d0e4ad8a675aa50e1de793.jpg',
-    'brand' => 'Music Prints'
+      $decor->products()->updateOrCreate(['slug' => 'radiohead-vintage-poster'], [
+     'name' => 'Radiohead Vintage Poster',
+     'description' => 'Retro Radiohead tour poster for a classic indie aesthetic.',
+     'price' => 11.99,
+     'image_url' => 'https://i.pinimg.com/736x/0c/5f/d2/0c5fd217d5d0e4ad8a675aa50e1de793.jpg',
+     'brand' => 'Music Prints'
     ]);
 
         // Storage
@@ -668,20 +817,51 @@ class ShopSeeder extends Seeder
             'brand' => 'Mead'
         ]);
         $notebooks->products()->updateOrCreate(['slug' => 'classic-lined-notebook'], [
-    'name' => 'Classic Lined Notebook',
-    'description' => 'Minimal lined notebook perfect for lectures, notes, and daily planning.',
-    'price' => 6.99,
-    'image_url' => 'https://i.pinimg.com/736x/a2/ca/7b/a2ca7b7dcce9a3c88f891178cfe7295c.jpg',
-    'brand' => 'Papier'
-     ]);
+        'name' => 'Classic Lined Notebook',
+         'description' => 'Minimal lined notebook perfect for lectures, notes, and daily planning.',
+          'price' => 6.99,
+        'image_url' => 'https://i.pinimg.com/736x/a2/ca/7b/a2ca7b7dcce9a3c88f891178cfe7295c.jpg',
+          'brand' => 'Papier'
+         ]);
 
-      $notebooks->products()->updateOrCreate(['slug' => 'floral-art-spiral-notebook'], [
-      'name' => 'Floral Art Spiral Notebook',
-      'description' => 'Aesthetic spiral notebook with artistic floral design.',
-      'price' => 8.99,
-      'image_url' => 'https://i.pinimg.com/1200x/17/15/89/1715894d62437386643b9a47b06c7789.jpg',
-      'brand' => 'Art Print Co.'
-    ]);
+        $notebooks->products()->updateOrCreate(['slug' => 'floral-art-spiral-notebook'], [
+        'name' => 'Floral Art Spiral Notebook',
+        'description' => 'Aesthetic spiral notebook with artistic floral design.',
+        'price' => 8.99,
+        'image_url' => 'https://i.pinimg.com/1200x/17/15/89/1715894d62437386643b9a47b06c7789.jpg',
+       'brand' => 'Art Print Co.'
+        ]);
+        $notebooks->products()->updateOrCreate(['slug' => 'mouse-notebook'], [
+        'name' => 'Wrendale Mouse Notebook',
+         'description' => 'Cute illustrated notebook featuring a mouse design. Perfect for notes, journaling, or school.',
+          'price' => 7.00,
+        'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/wrendale-designs-signature-stationery-notebook-mouse~59S367FRSC.jpg',
+          'brand' => 'Wrendale Designs'
+        ]);
+
+         $notebooks->products()->updateOrCreate(['slug' => 'beach-wave-notebook'], [
+          'name' => 'Beach Wave Hardcover Notebook',
+          'description' => 'Stylish notebook with a modern beach-inspired wave design and durable hardcover.',
+          'price' => 5.00,
+          'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/papier-beach-towel-hardcover-lined-notebook-green~76E087FRSC.jpg',
+         'brand' => 'Papier'
+         ]);
+
+       $notebooks->products()->updateOrCreate(['slug' => 'floral-bird-notebook'], [
+       'name' => 'Floral Bird Notebook',
+       'description' => 'Beautiful patterned notebook with floral and bird illustrations for a premium feel.',
+       'price' => 4.50,
+       'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/papier-quilted-daydream-lined-notebook~76B097FRSC.jpg',
+       'brand' => 'Papier'
+       ]);
+
+      $notebooks->products()->updateOrCreate(['slug' => 'daily-planner-notebook'], [
+      'name' => 'Daily Planner Notebook',
+      'description' => 'Organise your day with this vibrant daily planner notebook, perfect for productivity.',
+      'price' => 3.00,
+      'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/papier-colourblock-daily-planner~76K100FRSC.jpg',
+      'brand' => 'Papier'
+       ]);
 
         // Pens
         $pens->products()->updateOrCreate(['slug' => 'gel-pen-set'], [
@@ -698,21 +878,53 @@ class ShopSeeder extends Seeder
             'image_url' => 'https://cdn.shopify.com/s/files/1/0659/6388/4787/products/SB56646_STABILO-Boss-Pastel-Highlighter-Assorted-Set-of-6_P1.jpg', 
             'brand' => 'Stabilo'
         ]);
-        $pens->products()->updateOrCreate(['slug' => 'fine-tip-black-ink-pens'], [
-      'name' => 'Fine Tip Black Ink Pens (6 Pack)',
-      'description' => 'Precision 0.5mm fine tip pens for clean, smooth writing.',
-      'price' => 6.00,
-      'image_url' => 'https://i.pinimg.com/1200x/ea/42/9b/ea429be5a3841497370a3fc5383a52a1.jpg',
-      'brand' => 'Muji'
-        ]);
+         $pens->products()->updateOrCreate(['slug' => 'fine-tip-black-ink-pens'], [
+         'name' => 'Fine Tip Black Ink Pens (6 Pack)',
+         'description' => 'Precision 0.5mm fine tip pens for clean, smooth writing.',
+         'price' => 6.00,
+         'image_url' => 'https://i.pinimg.com/1200x/ea/42/9b/ea429be5a3841497370a3fc5383a52a1.jpg',
+         'brand' => 'Muji'
+         ]);
 
          $pens->products()->updateOrCreate(['slug' => 'mechanical-pencil-set'], [
-      'name' => 'Mechanical Pencil Set with HB Leads',
-      'description' => 'Durable mechanical pencils with refillable HB leads.',
-      'price' => 2.50,
-      'image_url' => 'https://i.pinimg.com/736x/cc/ea/d6/ccead650eb3d63a74216176ea140b71e.jpg',
-      'brand' => 'Pentel'
-]);
+        'name' => 'Mechanical Pencil Set with HB Leads',
+        'description' => 'Durable mechanical pencils with refillable HB leads.',
+        'price' => 2.50,
+        'image_url' => 'https://i.pinimg.com/736x/cc/ea/d6/ccead650eb3d63a74216176ea140b71e.jpg',
+        'brand' => 'Pentel'
+         ]);
+
+         $pens->products()->updateOrCreate(['slug' => 'gel-pen-set-red-black'], [
+         'name' => 'Gel Pen Set (Red & Black)',
+         'description' => 'Smooth writing gel pens in red and black, perfect for everyday use.',
+          'price' => 5.00,
+          'image_url' => 'https://i.pinimg.com/736x/08/d6/31/08d6315d31a245cc6fc135397c1f8e49.jpg',
+           'brand' => 'Uni-ball'
+         ]);
+
+        $pens->products()->updateOrCreate(['slug' => 'essential-pen-pack'], [
+           'name' => 'Essential Pen Pack',
+         'description' => 'Complete pen set including multiple styles for writing, drawing, and note-taking.',
+         'price' => 7.00,
+         'image_url' => 'https://i.pinimg.com/1200x/7a/23/55/7a2355c593ca0092aea78362f547a739.jpg',
+         'brand' => 'Typo'
+        ]);
+
+         $pens->products()->updateOrCreate(['slug' => 'pastel-highlighter-set'], [
+          'name' => 'Pastel Highlighter Set',
+         'description' => 'Soft pastel highlighters ideal for studying, planning, and organising notes.',
+         'price' => 3.50,
+          'image_url' => 'https://i.pinimg.com/1200x/8c/01/de/8c01de13c5bdb784c32c4b71b2ed6347.jpg',
+          'brand' => 'Altitude'
+        ]);
+
+        $pens->products()->updateOrCreate(['slug' => 'blue-frixion-pen-set'], [
+         'name' => 'Blue Frixion Erasable Pens',
+         'description' => 'Erasable blue ink pens for clean and mistake-free writing.',
+         'price' => 11.00,
+         'image_url' => 'https://i.pinimg.com/736x/2c/0b/f8/2c0bf80f5ee08dd3d4848ef921faa41b.jpg',
+         'brand' => 'Pilot'
+        ]);
 
         // Art Supplies
         $art_supplies->products()->updateOrCreate(['slug' => 'sketch-pad'], [
