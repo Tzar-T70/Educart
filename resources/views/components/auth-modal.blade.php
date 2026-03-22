@@ -23,7 +23,7 @@
         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         @click.outside="closeModal()"
-        class="relative w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden"
+        class="relative w-full max-w-md bg-[var(--card-bg)] rounded-lg shadow-xl overflow-hidden"
     >
         <button @click="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -32,7 +32,7 @@
         <div class="p-6">
             
             <div x-show="currentView === 'login'">
-                 <h2 class="text-2xl font-bold text-brand-dark mb-4">{{ __('Log in') }}</h2>
+                 <h2 class="text-2xl font-bold text-[var(--brand-dark-blue)] mb-4">{{ __('Log in') }}</h2>
                 
                 <form method="POST" action="{{ route('login') }}" @submit.prevent="handleLogin" x-ref="loginForm">
                     @csrf
@@ -63,7 +63,7 @@
 
                     <div class="block mt-4">
                         <label for="remember_me" class="inline-flex items-center">
-                            <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-brand-dark-blue shadow-sm focus:ring-brand-dark-blue" name="remember">
+                            <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-[var(--brand-dark-blue)] shadow-sm focus:ring-[var(--brand-dark-blue)]" name="remember">
                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                         </label>
                     </div>
@@ -71,7 +71,7 @@
                         <button type="button" @click="currentView = 'forgotPassword'" class="text-sm text-gray-600 hover:text-gray-900 underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             {{ __('Forgot your password?') }}
                         </button>
-                        <x-primary-button class="ml-3 bg-brand-dark-blue hover:bg-opacity-90" x-bind:disabled="isVerifying">
+                        <x-primary-button class="ml-3 bg-[var(--brand-dark-blue)] hover:bg-opacity-90" x-bind:disabled="isVerifying">
                             <span x-show="!isVerifying">{{ __('Log in') }}</span>
                             <span x-show="isVerifying">Logging in...</span>
                         </x-primary-button>
@@ -80,7 +80,7 @@
                 <div class="text-center mt-4">
                     <p class="text-sm text-gray-600">
                         Don't have an account? 
-                        <button @click="currentView = 'register'" class="font-medium text-brand-dark-blue hover:underline">
+                        <button @click="currentView = 'register'" class="font-medium text-[var(--brand-dark-blue)] hover:underline">
                             Sign up
                         </button>
                     </p>
@@ -88,7 +88,7 @@
             </div>
 
             <div x-show="currentView === 'register'">
-                <h2 class="text-2xl font-bold text-brand-dark mb-4">{{ __('Sign up') }}</h2>
+                <h2 class="text-2xl font-bold text-[var(--text)] mb-4">{{ __('Sign up') }}</h2>
                 <form method="POST" action="{{ route('register') }}" @submit.prevent="handleRegister">
                     @csrf
                     <div>
@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <x-primary-button class="w-full justify-center bg-brand-dark-blue hover:bg-opacity-90" x-bind:disabled="isVerifying">
+                        <x-primary-button class="w-full justify-center bg-[var(--brand-dark-blue)] hover:bg-opacity-90" x-bind:disabled="isVerifying">
                             <span x-show="!isVerifying">{{ __('Register') }}</span>
                             <span x-show="isVerifying">Registering...</span>
                         </x-primary-button>
@@ -142,7 +142,7 @@
                 <div class="text-center mt-4">
                     <p class="text-sm text-gray-600">
                         Already have an account? 
-                        <button @click="currentView = 'login'" class="font-medium text-brand-dark-blue hover:underline">
+                        <button @click="currentView = 'login'" class="font-medium text-[var(--brand-dark-blue)] hover:underline">
                             Log in
                         </button>
                     </p>
@@ -150,7 +150,7 @@
             </div>
 
             <div x-show="currentView === 'forgotPassword'">
-                <h2 class="text-2xl font-bold text-brand-dark mb-2">{{ __('Forgot Password?') }}</h2>
+                <h2 class="text-2xl font-bold text-[var(--text)] mb-2">{{ __('Forgot Password?') }}</h2>
                 <p class="text-sm text-gray-600 mb-4">
                     {{ __('No problem. Just let us know your email address and we will email you a password reset link.') }}
                 </p>
@@ -163,21 +163,21 @@
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                     <div class="flex items-center justify-between mt-4">
-                        <button type="button" @click="currentView = 'login'" class="text-sm text-brand-dark-blue hover:underline">
+                        <button type="button" @click="currentView = 'login'" class="text-sm text-[var(--brand-dark-blue)] hover:underline">
                             Back to login
                         </button>
-                        <x-primary-button class="bg-brand-dark-blue hover:bg-opacity-90">
+                        <x-primary-button class="bg-[var(--brand-dark-blue)] hover:bg-opacity-90">
                             {{ __('Email Reset Link') }}
                         </x-primary-button>
                     </div>
                 </form>
             </div>
             <div x-show="currentView === 'forgotPasswordSuccess'">
-                 <h2 class="text-2xl font-bold text-brand-dark mb-2">{{ __('Check Your Email') }}</h2>
+                 <h2 class="text-2xl font-bold text-[var(--text)] mb-2">{{ __('Check Your Email') }}</h2>
                 <p class="text-sm text-gray-600 mb-4">
                     We've emailed you a password reset link. Please check your inbox (and spam folder) to continue.
                 </p>
-                <x-primary-button @click="closeModal()" class="w-full justify-center bg-brand-dark-blue hover:bg-opacity-90">
+                <x-primary-button @click="closeModal()" class="w-full justify-center bg-[var(--brand-dark-blue)] hover:bg-opacity-90">
                     {{ __('Got it') }}
                 </x-primary-button>
             </div>
@@ -187,7 +187,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
 
-                <h2 class="text-2xl font-bold text-brand-dark mb-2 text-center">{{ __('Check Your Email') }}</h2>
+                <h2 class="text-2xl font-bold text-[var(--text)] mb-2 text-center">{{ __('Check Your Email') }}</h2>
                 <p class="text-sm text-gray-600 mb-4 text-center">
                     We've sent a 6-digit code to your email.
                 </p>
@@ -221,7 +221,7 @@
                         type="button"
                         @click.prevent="resendCode"
                         x-bind:disabled="isResending || timerMessage !== ''"
-                        class="text-sm text-brand-dark-blue hover:underline disabled:text-gray-400 disabled:no-underline"
+                        class="text-sm text-[var(--brand-dark-blue)] hover:underline disabled:text-gray-400 disabled:no-underline"
                     >
                         Resend Code
                     </button>

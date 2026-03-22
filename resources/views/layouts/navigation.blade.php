@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-brand-beige border-b border-brand-gray">
+<nav x-data="{ open: false }" class="bg-[var(--bg)] text-[var(--text)]">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center-x-2">
                     <a href="{{ route('home') }}" class="flex items-center space-x-2">
                         <img src ="/images/Logo_transparent.png" alt= "Educart Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-brand-dark-blue">Educart</span>
+                        <span class="text-2xl font-bold text-[var(--text)]">Educart</span>
                     </a>
                 </div>
 
@@ -15,26 +15,26 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
 
                     <!-- About Us Link -->
-                    <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                    <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('about-us')" :active="request()->routeIs('about-us')">
                         About Us
                     </x-nav-link>
 
                     <!-- Contact Us Link -->
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                    <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('contact')" :active="request()->routeIs('contact')">
                         Contact Us
                     </x-nav-link>
 
                     @foreach($categories as $category)
                         <div class="relative group h-full flex items-center">
-                            <x-nav-link :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
+                            <x-nav-link class="dark:text-white dark:hover:text-blue-300 dark:[&.active]:text-gray-200" :href="route('categories.show', $category)" :active="request()->is('categories/' . $category->slug . '*')">
                                 {{ $category->name }}
                             </x-nav-link>
                             
                             @if($category->subCategories->count() > 0)
-                                <div class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-md z-50 min-w-[220px] border border-gray-100 overflow-hidden transition-all duration-200 ease-out">
+                                <div class="absolute left-0 top-full hidden group-hover:block bg-[var(--card-bg)] shadow-xl rounded-md z-50 min-w-[220px] border border-[var(--brand-beige)] overflow-hidden transition-all duration-200 ease-out">
                                     <div class="py-1">
                                         @foreach($category->subCategories as $subCategory)
-                                            <a href="{{ route('subcategories.show', [$category, $subCategory]) }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-beige hover:text-brand-dark-blue transition-colors duration-150">
+                                            <a href="{{ route('subcategories.show', [$category, $subCategory]) }}" class="block px-4 py-2.5 text-sm text-[var(--text)] hover:bg-[var(--brand-beige)] hover:text-[var(--brand-dark-blue)] transition-colors duration-150">
                                                 {{ $subCategory->name }}
                                             </a>
                                         @endforeach
@@ -49,7 +49,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 @auth
                 <a href="{{ route('basket.index') }}" 
-                class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue mr-4">
+                class="text-sm font-medium text-[var(--text)] hover:text-[var(--brand-dark-blue)] mr-4">
                     Basket
                 </a>
 
@@ -60,7 +60,7 @@
                 @endauth
 
                 @guest
-                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="text-sm font-medium text-brand-dark hover:text-brand-dark-blue underline">
+                    <button @click.prevent="$dispatch('open-auth-modal', { view: 'login' })" class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
                         {{ __('Log in') }}
                     </button>
                     <button @click.prevent="$dispatch('open-auth-modal', { view: 'register' })" class="ml-4 text-sm font-medium text-white bg-brand-dark-blue hover:bg-opacity-90 px-4 py-2 rounded-md">
@@ -71,7 +71,7 @@
                 @auth
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-brand-dark bg-brand-beige hover:text-brand-dark-blue focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-brand-dark-blue hover:text-[var(--brand-beige)] focus:outline-none transition ease-in-out duration-150">
                                 <div>{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
@@ -83,7 +83,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.edit')">
+                            <x-dropdown-link class="dark:text-white dark:hover:text-blue-300" :href="route('profile.edit')">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
@@ -91,7 +91,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link :href="route('logout')"
+                                <x-dropdown-link class="dark:text-white dark:hover:text-blue-300" :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                     {{ __('Log Out') }}
@@ -103,7 +103,7 @@
             </div>
 
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-brand-dark hover:text-brand-dark-blue focus:outline-none transition duration-150 ease-in-out">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-[var(--text)] hover:text-[var(--brand-dark-blue)] focus:outline-none transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -131,7 +131,7 @@
                     {{ $category->name }}
                 </x-responsive-nav-link>
                 @foreach($category->subCategories as $subCategory)
-                    <x-responsive-nav-link :href="route('subcategories.show', [$category, $subCategory])" class="pl-8 text-sm text-gray-600">
+                    <x-responsive-nav-link :href="route('subcategories.show', [$category, $subCategory])" class="pl-8 text-sm text-[var(--text)]">
                         - {{ $subCategory->name }}
                     </x-responsive-nav-link>
                 @endforeach
@@ -164,8 +164,8 @@
             @endguest
             @auth
                 <div class="px-4">
-                    <div class="font-medium text-base text-brand-dark">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-[var(--text)]">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-[var(--text)]">{{ Auth::user()->email }}</div>
                 </div>
 
                 <div class="mt-3 space-y-1">

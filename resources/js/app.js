@@ -359,6 +359,5 @@ window.authModal = (config = {}) => ({
     }
 });
 
-
 window.Alpine = Alpine;
 Alpine.start();

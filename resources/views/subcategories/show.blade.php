@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-base leading-tight">
             <a href="{{ route('categories.show', $category) }}" class="hover:underline text-gray-500">{{ $category->name }}</a>
             <span class="text-gray-400 mx-2">/</span>
-            <span class="text-brand-dark-blue">{{ $subCategory->name }}</span>
+            <span class="text-[var(--brand-dark-blue)]">{{ $subCategory->name }}</span>
         </h2>
     </x-slot>
 

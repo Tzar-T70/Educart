@@ -11,8 +11,8 @@
 
     {{-- Product Info --}}
     <div class="flex-1 ml-4">
-        <h3 class="text-lg font-semibold text-brand-dark">{{ $item->product->name }}</h3>
-        <p class="text-brand-dark-blue font-medium">
+        <h3 class="text-lg font-semibold text-[var(--text)]">{{ $item->product->name }}</h3>
+        <p class="text-[var(--brand-dark-blue)] font-medium">
             £{{ number_format($item->price, 2) }}
         </p>
     </div>
@@ -25,15 +25,15 @@
             name="quantity" 
             value="{{ $item->quantity }}"
             min="1"
-            class="w-16 border-brand-gray focus:border-brand-dark-blue rounded-lg"
+            class="w-16 border-brand-gray focus:border-[var(--brand-dark-blue)] rounded-lg"
         >
-        <button class="text-sm text-brand-dark-blue hover:underline ml-1">
+        <button class="text-sm text-[var(--brand-dark-blue)] hover:underline ml-1">
             Update
         </button>
     </form>
 
     {{-- Total Price --}}
-    <div class="w-20 text-right font-semibold text-brand-dark">
+    <div class="w-20 text-right font-semibold text-[var(--text)]">
         £{{ number_format($item->price * $item->quantity, 2) }}
     </div>
 
