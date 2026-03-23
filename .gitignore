@@ -16,3 +16,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.vite/deps_temp_a28b8190/package.json
+/.vite
