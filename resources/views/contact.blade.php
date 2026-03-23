@@ -20,69 +20,10 @@
                         Send Us a Message
                     </h2>
 
-                    <!-- Success message -->
-                    @if(session('success'))
-                        <div class="mb-6 p-4 bg-green-100 text-green-800 rounded-md">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
-                    <!-- Contact Form -->
-                    <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
-                        @csrf
-
-                        <!-- Name -->
-                        <div>
-                            <label class="block text-sm font-medium text-[var(--text)]">Your Name</label>
-                            <input 
-                                type="text" 
-                                name="name" 
-                                required
-                                class="mt-2 w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-brand-dark-blue focus:border-brand-dark-blue"
-                            >
-                            @error('name')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <!-- Email -->
-                        <div>
-                            <label class="block text-sm font-medium text-[var(--text)]">Your Email</label>
-                            <input 
-                                type="email" 
-                                name="email" 
-                                required
-                                class="mt-2 w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-brand-dark-blue focus:border-brand-dark-blue"
-                            >
-                            @error('email')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <!-- Message -->
-                        <div>
-                            <label class="block text-sm font-medium text-[var(--text)]">Message</label>
-                            <textarea 
-                                name="message" 
-                                rows="5" 
-                                required
-                                class="mt-2 w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-brand-dark-blue focus:border-brand-dark-blue"
-                            ></textarea>
-                            @error('message')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <!-- Submit -->
-                        <div>
-                            <button 
-                                type="submit"
-                                class="bg-[var(--accent)] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition"
-                            >
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
+                    <!-- Jotform Embed -->
+                    <div class="w-full overflow-hidden">
+                        <script src="https://form.jotform.com/jsform/260412455502043"></script>
+                    </div>
 
                 </div>
             </div>
