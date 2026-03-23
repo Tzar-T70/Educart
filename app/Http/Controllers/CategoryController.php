@@ -10,9 +10,7 @@ class CategoryController extends Controller
 {
     public function show(Category $category)
     {
-        $category->load(['subCategories.products' => function($query) {
-            $query->take(4);
-        }]);
+        $category->load('subCategories.products');
         return view('categories.show', compact('category'));
     }
 

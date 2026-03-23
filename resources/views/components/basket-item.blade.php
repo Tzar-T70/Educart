@@ -4,16 +4,16 @@
 
     {{-- Product Image --}}
     <img 
-        src="{{ $item['image'] }}" 
-        alt="{{ $item['name'] }}"
+        src="{{ $item->product->image_url }}" 
+        alt="{{ $item->product->name }}"
         class="w-20 h-20 object-cover rounded-lg shadow-md"
     >
 
     {{-- Product Info --}}
     <div class="flex-1 ml-4">
-        <h3 class="text-lg font-semibold text-brand-dark">{{ $item['name'] }}</h3>
-        <p class="text-brand-dark-blue font-medium">
-            £{{ number_format($item['price'], 2) }}
+        <h3 class="text-lg font-semibold text-[var(--text)]">{{ $item->product->name }}</h3>
+        <p class="text-[var(--brand-dark-blue)] font-medium">
+            £{{ number_format($item->price, 2) }}
         </p>
     </div>
 
@@ -23,18 +23,18 @@
         <input 
             type="number" 
             name="quantity" 
-            value="{{ $item['quantity'] }}"
+            value="{{ $item->quantity }}"
             min="1"
-            class="w-16 border-brand-gray focus:border-brand-dark-blue rounded-lg"
+            class="w-16 border-brand-gray focus:border-[var(--brand-dark-blue)] rounded-lg"
         >
-        <button class="text-sm text-brand-dark-blue hover:underline ml-1">
+        <button class="text-sm text-[var(--brand-dark-blue)] hover:underline ml-1">
             Update
         </button>
     </form>
 
     {{-- Total Price --}}
-    <div class="w-20 text-right font-semibold text-brand-dark">
-        £{{ number_format($item['price'] * $item['quantity'], 2) }}
+    <div class="w-20 text-right font-semibold text-[var(--text)]">
+        £{{ number_format($item->price * $item->quantity, 2) }}
     </div>
 
     {{-- Remove --}}

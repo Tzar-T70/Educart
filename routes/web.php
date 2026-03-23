@@ -4,23 +4,26 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::post('/checkout/process', [CheckoutController::class, 'process'])
+    ->name('checkout.process');
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/about-us', function () {
+    return view('about-us');   // If it's resources/views/about-us.blade.php
+}) ->name('about-us');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,6 +41,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/basket', [BasketController::class, 'index'])->name('basket.index');
+Route::post('/basket/add', [BasketController::class, 'add'])->name('basket.add');
 Route::post('/basket/update/{id}', [BasketController::class, 'updateQuantity'])->name('basket.update');
 Route::post('/basket/remove/{id}', [BasketController::class, 'remove'])->name('basket.remove');
 
@@ -56,8 +60,5 @@ Route::get('/checkout', function () {
     ]);
 });
 
-// Process checkout
-Route::post('/checkout', [CheckoutController::class, 'process'])
-    ->name('checkout.process');
 
 require __DIR__.'/auth.php';

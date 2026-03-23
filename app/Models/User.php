@@ -52,4 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
         // Use our new custom notification instead of the default one
         $this->notify(new SendVerificationCode());
     }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class, 'user_id');
     }
+}

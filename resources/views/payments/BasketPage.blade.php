@@ -23,8 +23,8 @@
         
      
 
-    <x-slot name="header">
-        <h2 class="text-3xl font-bold text-brand-dark-blue">
+<x-slot name="header">
+        <h2 class="text-3xl font-bold text-[var(--text)]">
             Your Basket
         </h2>
     </x-slot>
@@ -34,13 +34,13 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
             {{-- Basket Items --}}
-            <div class="md:col-span-2 bg-white rounded-xl shadow p-6">
-                @if(count($basket) > 0)
-                    @foreach($basket as $id => $item)
-                        <x-basket-item :id="$id" :item="$item" />
+            <div class="md:col-span-2 bg-[var(--card-bg)] rounded-xl shadow p-6">
+                @if($cart && $cart->items->count() > 0)
+                    @foreach($cart->items as $item)
+                        <x-basket-item :id="$item->cart_item_id" :item="$item" />
                     @endforeach
                 @else
-                    <p class="text-brand-dark text-lg">Your basket is empty.</p>
+                    <p class="text-[var(--text)] text-lg">Your basket is empty.</p>
                 @endif
             </div>
 
