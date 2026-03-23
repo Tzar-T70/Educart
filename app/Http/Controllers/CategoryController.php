@@ -8,15 +8,129 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function show(Category $category)
+    public function show(Category $category, Request $request)
     {
-        $category->load('subCategories.products');
+        $sort = $request->query('sort');
+        $search = $request->query('search');
+        $minPrice = $request->query('min_price');
+        $maxPrice = $request->query('max_price');
+        $gender = $request->query('gender');
+
+        $subCategories = $category->subCategories()->get();
+
+        foreach ($subCategories as $subCategory) {
+            $productsQuery = $subCategory->products();
+
+            if ($search) {
+                $productsQuery->where('name', 'like', '%' . $search . '%');
+            }
+
+            if ($minPrice !== null && $minPrice !== '') {
+                $productsQuery->where('price', '>=', $minPrice);
+            }
+
+            if ($maxPrice !== null && $maxPrice !== '') {
+                $productsQuery->where('price', '<=', $maxPrice);
+            }
+
+            if ($gender && $category->slug === 'fashion') {
+                if ($subCategory->slug === 'mens') {
+                    if ($gender === 'womens') {
+                        $productsQuery->whereRaw('1 = 0');
+                    }
+                } elseif ($subCategory->slug === 'womens') {
+                    if ($gender === 'mens') {
+                        $productsQuery->whereRaw('1 = 0');
+                    }
+                } elseif ($subCategory->slug === 'footwear') {
+                    $productsQuery->where('gender', $gender);
+                }
+            }
+
+            if ($sort === 'popular') {
+                $productsQuery->orderBy('created_at', 'desc');
+            }
+
+            if ($sort === 'price_asc') {
+                $productsQuery->orderBy('price', 'asc');
+            }
+
+            if ($sort === 'created_desc') {
+                $productsQuery->orderBy('created_at', 'desc');
+            }
+
+            if ($sort === 'created_asc') {
+                $productsQuery->orderBy('created_at', 'asc');
+            }
+
+            if ($sort === 'name_asc') {
+                $productsQuery->orderBy('name', 'asc');
+            }
+
+            if ($sort === 'name_desc') {
+                $productsQuery->orderBy('name', 'desc');
+            }
+
+            $subCategory->setRelation('products', $productsQuery->get());
+        }
+
+        $category->setRelation('subCategories', $subCategories);
+
         return view('categories.show', compact('category'));
     }
 
-    public function showSubCategory(Category $category, SubCategory $subCategory)
+    public function showSubCategory(Category $category, SubCategory $subCategory, Request $request)
     {
-        $subCategory->load('products');
-        return view('subcategories.show', compact('category', 'subCategory'));
+        $sort = $request->query('sort');
+        $search = $request->query('search');
+        $minPrice = $request->query('min_price');
+        $maxPrice = $request->query('max_price');
+        $gender = $request->query('gender');
+
+        $productsQuery = $subCategory->products();
+
+        if ($search) {
+            $productsQuery->where('name', 'like', '%' . $search . '%');
+        }
+
+        if ($gender && $subCategory->slug === 'footwear') {
+            $productsQuery->where('gender', $gender);
+        }
+
+        if ($minPrice !== null && $minPrice !== '') {
+            $productsQuery->where('price', '>=', $minPrice);
+        }
+
+        if ($maxPrice !== null && $maxPrice !== '') {
+            $productsQuery->where('price', '<=', $maxPrice);
+        }
+
+        if ($sort === 'popular') {
+            $productsQuery->orderBy('created_at', 'desc');
+        }
+
+        if ($sort === 'price_asc') {
+            $productsQuery->orderBy('price', 'asc');
+        }
+
+        if ($sort === 'created_desc') {
+            $productsQuery->orderBy('created_at', 'desc');
+        }
+
+        if ($sort === 'created_asc') {
+            $productsQuery->orderBy('created_at', 'asc');
+        }
+
+        if ($sort === 'name_asc') {
+            $productsQuery->orderBy('name', 'asc');
+        }
+
+        if ($sort === 'name_desc') {
+            $productsQuery->orderBy('name', 'desc');
+        }
+
+        $products = $productsQuery->get();
+
+        return view('subcategories.show', compact('category', 'subCategory', 'products'));
     }
 }
