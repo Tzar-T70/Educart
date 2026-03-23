@@ -28,24 +28,5 @@
                 </div>
             </div>
         </section>
-
-        <!-- Email list (optional below form) -->
-        <section class="pb-16 bg-[var(--bg)]">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-[var(--text)] mb-5">Support Emails</h2>
-
-                <div class="bg-[var(--card-bg)] shadow-lg rounded-lg p-10">
-                    <ul class="space-y-4 text-lg text-[var(--text)]">
-                        <li><span class="font-semibold">Email 1:</span> 240066404@aston.ac.uk</li>
-                        <li><span class="font-semibold">Email 2:</span> …</li>
-                        <li><span class="font-semibold">Email 3:</span> …</li>
-                        <li><span class="font-semibold">Email 4:</span> …</li>
-                        <li><span class="font-semibold">Email 5:</span> …</li>
-                        <li><span class="font-semibold">Email 6:</span> …</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
     </main>
 </x-guest-layout>
