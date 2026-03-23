@@ -9,25 +9,25 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="bg-[var(--bg)] dark:bg-[var(--bg)] py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-[var(--card-bg)] overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-[var(--card)] dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 lg:p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <!-- Product Image -->
                         <div class="space-y-4">
-                            <div class="aspect-w-4 aspect-h-3 bg-[var(--bg)] rounded-lg overflow-hidden border border-[var(--brand-beige)]">
+                            <div class="aspect-w-4 aspect-h-3 bg-[var(--bg)] dark:bg-gray-700 rounded-lg overflow-hidden border border-[var(--border)] dark:border-gray-600">
                                 @if($product->image_url)
                                     <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="object-cover object-center w-full h-full">
                                 @else
-                                    <div class="flex items-center justify-center h-full text-[var(--text)]">No Image Available</div>
+                                    <div class="flex items-center justify-center h-full text-[var(--text)] dark:text-gray-400">No Image Available</div>
                                 @endif
                             </div>
 
                             <!-- Thumbnail placeholders -->
                             <div class="grid grid-cols-4 gap-4">
                                 @for($i = 0; $i < 4; $i++)
-                                    <div class="aspect-w-1 aspect-h-1 bg-[var(--bg)] rounded-md overflow-hidden border border-[var(--brand-beige)] cursor-pointer hover:border-[var(--brand-dark-blue)]">
+                                    <div class="aspect-w-1 aspect-h-1 bg-[var(--bg)] dark:bg-gray-700 rounded-md overflow-hidden border border-[var(--border)] dark:border-gray-600 cursor-pointer hover:border-[var(--brand)] dark:hover:border-blue-400">
                                         @if($product->image_url)
                                             <img src="{{ $product->image_url }}" class="object-cover w-full h-full opacity-75 hover:opacity-100">
                                         @endif
@@ -39,9 +39,9 @@
                         <!-- Product Details -->
                         <div class="flex flex-col">
                             @if($product->brand)
-                                <h2 class="text-sm font-semibold text-[var(--brand-dark-blue)] uppercase tracking-wide mb-2">{{ $product->brand }}</h2>
+                                <h2 class="text-sm font-semibold text-[var(--brand)] dark:text-blue-400 uppercase tracking-wide mb-2">{{ $product->brand }}</h2>
                             @endif
-                            <h1 class="text-3xl font-bold text-[var(--text)] mb-4">{{ $product->name }}</h1>
+                            <h1 class="text-3xl font-bold text-[var(--text)] dark:text-white mb-4">{{ $product->name }}</h1>
 
                             <!-- Ratings -->
                             <div class="flex items-center mb-6">
@@ -50,12 +50,12 @@
                                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                                     @endfor
                                 </div>
-                                <span class="ml-2 text-[var(--text)] text-sm">(128 reviews)</span>
+                                <span class="ml-2 text-[var(--text)] dark:text-gray-300 text-sm">(128 reviews)</span>
                             </div>
 
-                            <div class="text-2xl font-bold text-[var(--text)] mb-6">£{{ number_format($product->price, 2) }}</div>
+                            <div class="text-2xl font-bold text-[var(--text)] dark:text-white mb-6">£{{ number_format($product->price, 2) }}</div>
 
-                            <div class="prose prose-sm text-[var(--text)] mb-8">
+                            <div class="prose prose-sm text-[var(--text)] dark:text-gray-300 mb-8">
                                 <p>{{ $product->description }}</p>
                                 <ul>
                                     <li>Premium quality materials</li>
@@ -65,13 +65,13 @@
                             </div>
 
                             <!-- Actions -->
-                            <div class="mt-auto space-y-4 pt-6 border-t border-[var(--brand-beige)]">
+                            <div class="mt-auto space-y-4 pt-6 border-t border-[var(--border)] dark:border-gray-600">
                                 @if($product->sizes->count())
                                     <div class="mb-4">
-                                        <label class="block text-sm font-medium text-[var(--text)] mb-2">Available Sizes</label>
+                                        <label class="block text-sm font-medium text-[var(--text)] dark:text-gray-300 mb-2">Available Sizes</label>
                                         <div class="flex flex-wrap gap-2">
                                             @foreach($product->sizes as $size)
-                                                <button type="button" class="px-4 py-2 border rounded-md text-sm text-[var(--text)] border-[var(--brand-beige)] hover:bg-[var(--brand-dark-blue)] hover:text-white transition">
+                                                <button type="button" class="px-4 py-2 border rounded-md text-sm text-[var(--text)] dark:text-gray-300 border-[var(--border)] dark:border-gray-600 hover:bg-[var(--brand)] dark:hover:bg-blue-600 hover:text-white dark:hover:text-white transition">
                                                     {{ $size->size }}
                                                 </button>
                                             @endforeach
@@ -84,7 +84,7 @@
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <div class="w-32">
                                         <label for="quantity" class="sr-only">Quantity</label>
-                                        <select id="quantity" name="quantity" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-dark-blue focus:ring-brand-dark-blue sm:text-sm">
+                                        <select id="quantity" name="quantity" class="block w-full rounded-md border-[var(--border)] dark:border-gray-600 shadow-sm focus:border-[var(--brand)] dark:focus:border-blue-400 focus:ring-[var(--brand)] dark:focus:ring-blue-400 sm:text-sm">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -92,12 +92,12 @@
                                             <option>5</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="flex-1 bg-brand-dark-blue text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition shadow-sm">
+                                    <button type="submit" class="flex-1 bg-[var(--brand)] dark:bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 dark:hover:bg-blue-500 transition shadow-sm">
                                         Add to Cart
                                     </button>
                                 </form>
 
-                                <button class="w-full bg-brand-beige text-[var(--brand-dark-blue)] px-6 py-3 rounded-md font-medium hover:bg-brand-gray transition">
+                                <button class="w-full bg-[var(--beige)] dark:bg-gray-700 text-[var(--brand)] dark:text-blue-400 px-6 py-3 rounded-md font-medium hover:bg-[var(--gray)] dark:hover:bg-gray-600 transition">
                                     Buy Now
                                 </button>
                             </div>

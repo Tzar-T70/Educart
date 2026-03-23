@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-[var(--bg)] dark:bg-[var(--bg)]">
                 <div class="p-6 text-gray-900">
 
                     <form method="GET" class="mb-6 flex flex-wrap gap-4 items-center">
@@ -92,8 +92,8 @@
                         @if($subCategory->products->count())
                             <section class="mb-12">
                                 <div class="flex justify-between items-center mb-6">
-                                    <h3 class="text-2xl font-bold text-brand-dark-blue">{{ $subCategory->name }}</h3>
-                                    <a href="{{ route('subcategories.show', [$category, $subCategory]) }}" class="text-sm font-semibold text-gray-500 hover:text-brand-dark-blue transition">
+                                    <h3 class="text-2xl font-bold text-[var(--brand)] dark:text-blue-400">{{ $subCategory->name }}</h3>
+                                    <a href="{{ route('subcategories.show', [$category, $subCategory]) }}" class="text-sm font-semibold text-[var(--text)] dark:text-gray-400 hover:text-[var(--brand)] dark:hover:text-blue-400 transition">
                                         View All →
                                     </a>
                                 </div>
@@ -108,7 +108,7 @@
                     @endforeach
 
                     @if($category->subCategories->every(fn($subCategory) => $subCategory->products->isEmpty()))
-                        <div class="text-center py-12 text-gray-500">
+                        <div class="text-center py-12 text-[var(--text)] dark:text-gray-400">
                             No products found in this category.
                         </div>
                     @endif
