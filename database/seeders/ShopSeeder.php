@@ -205,449 +205,620 @@ class ShopSeeder extends Seeder
         'brand' => 'JBL'
         ]);
 
-        // --- 2. Fashion Category
-        $fashion = Category::updateOrCreate(['slug' => 'fashion'], ['name' => 'Fashion']);
-        $mens = $fashion->subCategories()->updateOrCreate(['slug' => 'mens'], ['name' => 'Mens']);
-        $womens = $fashion->subCategories()->updateOrCreate(['slug' => 'womens'], ['name' => 'Womens']);
-        $footwear = $fashion->subCategories()->updateOrCreate(['slug' => 'footwear'], ['name' => 'Footwear']);
+      // --- 2. Fashion Category
+    $fashion = Category::updateOrCreate(['slug' => 'fashion'], ['name' => 'Fashion']);
+    $mens = $fashion->subCategories()->updateOrCreate(['slug' => 'mens'], ['name' => 'Mens']);
+    $womens = $fashion->subCategories()->updateOrCreate(['slug' => 'womens'], ['name' => 'Womens']);
+    $footwear = $fashion->subCategories()->updateOrCreate(['slug' => 'footwear'], ['name' => 'Footwear']);
 
-        // Mens
-        $mens->products()->updateOrCreate(['slug' => 'white-t-shirt'], [
-            'name' => 'White T-Shirt',
-            'description' => 'Comfortable cotton t-shirt.',
-            'price' => 11.99,
-            'image_url' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-            'brand' => 'Uniqlo'
-        ]);
-        $mens->products()->updateOrCreate(['slug' => 'slim-fit-jeans'], [
-            'name' => 'Slim Fit Dark Denim Jeans',
-            'description' => 'Versatile dark wash denim.',
-            'price' => 15.00,
-            'image_url' => 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGAV8BskmSgmg6sMlFXQjGvLqIJ9J1L5xAca2Zc_Ng_9WyjLglYrvBDYKvLUhPyXea2pourWtD12AlNiXjySfbXxT3ownjwiWc_eMJo5_aXGERkWuX5Wqr5w&usqp=CAc',
-            'brand' => 'Levis'
-        ]);
-        $mens->products()->updateOrCreate(['slug' => 'grey-wool-blouson-jacket'], [
-              'name' => 'Grey Wool Blouson Jacket',
-              'description' => 'Warm grey wool-blend blouson jacket with welt pockets, banded hem and clean tailored details.',
-             'price' => 30.00,
-             'image_url' => 'https://i.pinimg.com/1200x/ca/c8/cf/cac8cf0f1774f51a72258cfafac3dc45.jpg',
-             'brand' => 'Wconcept'
-       ]);
-       $mens->products()->updateOrCreate(['slug' => 'oversized-grey-jumper'], [
-             'name' => 'Oversized Grey Jumper',
-             'description' => 'Soft oversized alpaca-merino jumper with a textured feel and relaxed fit.',
-             'price' => 12.99,
-             'image_url' => 'https://i.pinimg.com/474x/8e/09/cf/8e09cfd8ac6d98129b6415cf4a9a0a57.jpg',
-             'brand' => 'COS'
-       ]);
-        $mens->products()->updateOrCreate(['slug' => 'polo-cap'], [
-            'name' => 'Polo Cap',
-         'description' => 'Polo Country Logo-Embroidered Cotton-Twill Baseball Cap.',
-         'price' => 5.00,
-         'image_url' => 'https://i.pinimg.com/736x/fe/dc/5c/fedc5cca9298ec93930541b0275fa320.jpg',
-          'brand' => 'Mr Porter'
-       ]);
-       $mens->products()->updateOrCreate(['slug' => 'yellow-casual-overshirt'], [
-         'name' => 'Yellow Casual Overshirt',
-         'description' => 'Lightweight yellow overshirt layered over a striped t-shirt, perfect for a relaxed summer look.',
-         'price' => 10.00,
-        'image_url' => 'https://plus.unsplash.com/premium_photo-1683140435505-afb6f1738d11?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-         'brand' => 'Zara'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'grey-relaxed-jeans'], [
-      'name' => 'Grey Relaxed Fit Jeans',
-      'description' => 'Light grey jeans with a relaxed fit, offering comfort and a clean modern style.',
-      'price' => 16.99,
-      'image_url' => 'https://i.pinimg.com/736x/85/50/bb/8550bbd8c5266799114356858b086ee1.jpg',
-       'brand' => 'Pull & Bear'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'black-tshirt'], [
-      'name' => 'Black T-Shirt',
-      'description' => 'Simple black t-shirt with a clean fit, made from soft breathable cotton for everyday wear.',
-      'price' => 9.99,
-      'image_url' => 'https://plus.unsplash.com/premium_photo-1689531916407-d64dedd6126d?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'brand' => 'Uniqlo'
-      ]);
-     $mens->products()->updateOrCreate(['slug' => 'black-washed-jeans'], [
-      'name' => 'Black Washed Jeans',
-      'description' => 'Classic black washed jeans with a relaxed straight fit, perfect for everyday casual wear.',
-      'price' => 17.00,
-      'image_url' => 'https://i.pinimg.com/736x/b2/89/c7/b289c7911f76508d6ad84f5aedf2ea77.jpg',
-      'brand' => 'Levis'
-      ]);
-      $mens->products()->updateOrCreate(['slug' => 'navy-check-overshirt'], [
-      'name' => 'Navy Check Overshirt',
-      'description' => 'Stylish navy check overshirt layered over a long sleeve tee, offering a modern casual look.',
-      'price' => 13.00,
-      'image_url' => 'https://i.pinimg.com/736x/1d/a9/b7/1da9b7ee91f359337924cac385fec7d8.jpg',
-      'brand' => 'COS'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'white-slim-fit-jeans'], [
-      'name' => 'White Slim Fit Jeans',
-      'description' => 'Crisp white slim fit jeans designed for a sharp, clean look with everyday comfort.',
-      'price' => 12.99,
-      'image_url' => 'https://i.pinimg.com/736x/6b/07/46/6b074680575a0acb9e223c9f8957c2db.jpg',
-      'brand' => 'Zara'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'brown-leather-style-jacket'], [
-      'name' => 'Brown Leather Style Jacket',
-      'description' => 'Premium brown leather-style jacket with a relaxed fit, perfect for layering over casual outfits.',
-      'price' => 49.99,
-      'image_url' => 'https://i.pinimg.com/1200x/00/57/71/005771b1e7f450e6134db54417c83557.jpg',
-      'brand' => 'COS'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'black-utility-leather-jacket'], [
-      'name' => 'Black Utility Leather Jacket',
-      'description' => 'Sleek black leather jacket with front pockets and a structured fit.',
-      'price' => 79.99,
-      'image_url' => 'https://i.pinimg.com/1200x/e3/be/cc/e3beccfe455d39a46e311996615d8079.jpg',
-      'brand' => 'Zara'
-      ]);
-     $mens->products()->updateOrCreate(['slug' => 'navy-zip-up-jacket'], [
-      'name' => 'Navy Zip-Up Jacket',
-      'description' => 'Minimal navy zip-up jacket with a clean silhouette, perfect for everyday wear and layering.',
-      'price' => 69.99,
-      'image_url' => 'https://i.pinimg.com/1200x/c5/a2/7c/c5a27c724b2131e8c6db3e00cf3e211b.jpg',
-      'brand' => 'Uniqlo'
-      ]);
-    $mens->products()->updateOrCreate(['slug' => 'green-zip-neck-jumper'], [
-      'name' => 'Green Zip Neck Jumper',
-      'description' => 'Smart green zip-neck jumper with a refined fit, perfect for layering over shirts. ',
-      'price' => 14.00,
-      'image_url' => 'https://i.pinimg.com/1200x/cb/89/fd/cb89fd877865b347e2cb583fca18b714.jpg',
-      'brand' => 'Reiss'
-      ]);
-    $mens->products()->updateOrCreate(['slug' => 'brown-graphic-knit-jumper'], [
-      'name' => 'Brown Graphic Knit Jumper',
-      'description' => 'Statement brown jumper featuring an artistic graphic design.',
-      'price' => 12.99,
-      'image_url' => 'https://i.pinimg.com/1200x/e3/63/3d/e3633d7fd0af6b1d50415f687dd53f97.jpg',
-      'brand' => 'ASOS'
-      ]);
-      $mens->products()->updateOrCreate(['slug' => 'baby-blue-knit-jumper'], [
-      'name' => 'Baby Blue Knit Jumper',
-      'description' => 'Soft baby blue knit jumper with a relaxed fit, perfect for a clean and modern casual style.',
-      'price' => 11.00,
-      'image_url' => 'https://i.pinimg.com/1200x/ec/fd/ee/ecfdee29154a6d8eb88586b6040388c7.jpg',
-      'brand' => 'COS'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'blue-check-knit-beanie'], [
-      'name' => 'Blue Check Knit Beanie',
-      'description' => 'Stylish blue check patterned beanie with a snug fit, perfect for colder days.',
-      'price' => 4.99,
-      'image_url' => 'https://i.pinimg.com/736x/a8/98/fe/a898fe7628de37da17d4bff162883f0f.jpg',
-      'brand' => 'LV Style'
-      ]);
-      $mens->products()->updateOrCreate(['slug' => 'green-baseball-cap'], [
-      'name' => 'Green Baseball Cap',
-      'description' => 'Classic green baseball cap with a curved brim, perfect for everyday casual wear.',
-      'price' => 7.00,
-     'image_url' => 'https://i.pinimg.com/1200x/f5/3a/d4/f53ad47e1df47b7d6599b8df51bbc37e.jpg',
-      'brand' => 'New Era'
-       ]);
-      $mens->products()->updateOrCreate(['slug' => 'grey-knit-beanie'], [
-      'name' => 'Grey Knit Beanie',
-      'description' => 'Warm grey knit beanie with a minimal design, ideal for winter outfits.',
-      'price' => 4.99,
-      'image_url' => 'https://i.pinimg.com/1200x/b2/96/17/b29617fe7aae96e5eeaa9406fba95501.jpg',
-      'brand' => 'The North Face'
-         ]);
+   $clothingSizes = [
+    ['size' => 'XS'],
+    ['size' => 'S'],
+    ['size' => 'M'],
+    ['size' => 'L'],
+    ['size' => 'XL'],
+   ];
 
-        // Womens
-        $womens->products()->updateOrCreate(['slug' => 'floral-summer-dress'], [
-            'name' => 'Floral Summer Dress',
-            'description' => 'Light and airy floral print dress.',
-            'price' => 8.50,
-            'image_url' => 'https://www.crewclothing.co.uk/images/products/large/WWJ062_FOLKMAUVE.jpg',
-            'brand' => 'Zara'
-        ]);
-        $womens->products()->updateOrCreate(['slug' => 'cashmere-sweater'], [
-            'name' => 'Soft Cashmere Sweater',
-            'description' => 'Luxuriously soft and warm sweater for winter.',
-            'price' => 20.00,
-            'image_url' => 'https://riseandfall.co/cdn/shop/files/Rise_Fall_CashmereMerinoSaddleSleeveCrewNeckJumperinGraphite_03_d4675dba-69a9-4cb8-99fd-77ce08a61f86.jpg?crop=center&format=webp&height=800&v=1761167623&width=800',
-            'brand' => 'Everlane'
-        ]);
-        $womens->products()->updateOrCreate(['slug' => 'tailored-marl-midi-dress'], [
-        'name' => 'Tailored Marl Midi Dress',
-        'description' => 'A tailored sleeveless midi dress with a defined waist, side-buckle detailing and practical pockets.',
-         'price' => 12.99,
-         'image_url' => 'https://i.pinimg.com/1200x/c6/76/cf/c676cfdc60f16d0f72cfeb2971264926.jpg',
-         'brand' => 'KM'
-       ]);
-       $womens->products()->updateOrCreate(['slug' => 'straight-leg-jeans'], [
-       'name' => 'Straight Leg Jeans',
-      'description' => 'Relaxed low-rise pinstripe jeans with a straight leg and classic five-pocket design.',
-      'price' => 20.00,
-      'image_url' => 'https://i.pinimg.com/1200x/d3/73/15/d373159b9c54353f740098a7484947db.jpg',
-      'brand' => 'Urban Outfitters'
-       ]);
-      $womens->products()->updateOrCreate(['slug' => 'light-pink-poplin-blouse'], [
-      'name' => 'Light Pink Poplin Blouse',
-      'description' => 'Light pink poplin blouse with a flared hem, button-up front and shirred detailing.',
-      'price' => 8.00,
-      'image_url' => 'https://i.pinimg.com/736x/95/80/e5/9580e5a7d2f6b547a582fb6923998adc.jpg',
-       'brand' => 'Motel'
-       ]);
+  $mensShoeSizes = [
+    ['size' => '5'],
+    ['size' => '6'],
+    ['size' => '7'],
+    ['size' => '8'],
+    ['size' => '9'],
+    ['size' => '10'],
+    ['size' => '11'],
+    ['size' => '12'],
+    ['size' => '13'],
+];
 
-       $womens->products()->updateOrCreate(['slug' => 'double-breasted-peacoat'], [
-       'name' => 'Double-Breasted Peacoat',
-      'description' => 'Chic short peacoat with a flattering waist, secure zip pockets and polished detailing.',
-       'price' => 32.00,
-      'image_url' => 'https://i.pinimg.com/736x/78/22/d2/7822d255ce2f2cbf59c47a0e0947e60e.jpg',
-      'brand' => 'Livaa Studio'
-       ]);
+$womensShoeSizes = [
+    ['size' => '4'],
+    ['size' => '5'],
+    ['size' => '6'],
+    ['size' => '7'],
+    ['size' => '8'],
+    ['size' => '9'],
+    ['size' => '10'],
+];
 
-      $womens->products()->updateOrCreate(['slug' => 'classic-structured-purse'], [
-      'name' => 'Classic Structured Purse',
-      'description' => 'Spacious, organised purse with a sleek finish and versatile style.',
-      'price' => 14.00,
-      'image_url' => 'https://i.pinimg.com/1200x/e3/45/99/e34599056445437aa03ecc3a947096cf.jpg',
-      'brand' => 'Fenwick'
+// Mens
+     $product = $mens->products()->updateOrCreate(['slug' => 'white-t-shirt'], [
+    'name' => 'White T-Shirt',
+    'description' => 'Comfortable cotton t-shirt.',
+    'price' => 11.99,
+    'image_url' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    'brand' => 'Uniqlo'
      ]);
-     $womens->products()->updateOrCreate(['slug' => 'navy-pinstripe-mini-dress'], [
-      'name' => 'Navy Pinstripe Mini Dress',
-      'description' => 'Sleeveless navy pinstripe mini dress with a clean tailored silhouette.',
-      'price' => 22.00,
-      'image_url' => 'https://i.pinimg.com/1200x/70/07/32/700732895864b99068fbf5a3fa8e8c38.jpg',
-      'brand' => 'Mango'
-      ]);
+     $product->sizes()->delete();
+     $product->sizes()->createMany($clothingSizes);
 
-    $womens->products()->updateOrCreate(['slug' => 'brown-midi-dress'], [
-      'name' => 'Brown Midi Dress',
-      'description' => 'Elegant brown midi dress with a fitted waist and soft drape.',
-      'price' => 13.00,
-      'image_url' => 'https://i.pinimg.com/1200x/b6/f9/46/b6f9464d2870789e696e8e55518afda4.jpg',
-      'brand' => 'Reformation'
-      ]);
-    $womens->products()->updateOrCreate(['slug' => 'taupe-satin-midi-skirt'], [
-      'name' => 'Taupe Satin Midi Skirt',
-      'description' => 'Soft taupe satin midi skirt with a fluid drape.',
-      'price' => 8.99,
-      'image_url' => 'https://i.pinimg.com/1200x/f0/be/69/f0be6961c3cab445c109150ccb47a8c9.jpg',
-      'brand' => 'H&M'
-     ]);
+    $product = $mens->products()->updateOrCreate(['slug' => 'slim-fit-jeans'], [
+    'name' => 'Slim Fit Dark Denim Jeans',
+    'description' => 'Versatile dark wash denim.',
+    'price' => 15.00,
+    'image_url' => 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGAV8BskmSgmg6sMlFXQjGvLqIJ9J1L5xAca2Zc_Ng_9WyjLglYrvBDYKvLUhPyXea2pourWtD12AlNiXjySfbXxT3ownjwiWc_eMJo5_aXGERkWuX5Wqr5w&usqp=CAc',
+    'brand' => 'Levis'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-   $womens->products()->updateOrCreate(['slug' => 'white-mermaid-maxi-skirt'], [
-      'name' => 'White Mermaid Maxi Skirt',
-      'description' => 'Elegant white maxi skirt with a softly flared hem.',
-      'price' => 11.00,
-      'image_url' => 'https://i.pinimg.com/736x/17/54/3e/17543e1aa27ab1a109e022bd333f152e.jpg',
-      'brand' => 'House of CB'
-     ]);
-    $womens->products()->updateOrCreate(['slug' => 'brown-pinstripe-wide-leg-trousers'], [
-       'name' => 'Brown Pinstripe Wide Leg Trousers',
-      'description' => 'High-waisted brown pinstripe trousers with a wide leg fit, designed for a smart and flattering silhouette.',
-      'price' => 23.00,
-      'image_url' => 'https://i.pinimg.com/736x/c9/24/80/c924807a6df8de49e198db057d96c264.jpg',
-      'brand' => 'Zara'
-    ]);
-    $womens->products()->updateOrCreate(['slug' => 'brown-wrap-waist-shirt'], [
-      'name' => 'Brown Wrap Waist Shirt',
-      'description' => 'Structured brown shirt with a wrap waist detail, giving a sharp and elegant tailored look.',
-      'price' => 25.00,
-      'image_url' => 'https://i.pinimg.com/736x/2f/74/2b/2f742bc6b0c0186f9ef40ace4e3219d8.jpg',
-      'brand' => 'House of CB'
-     ]);
-   
-    $womens->products()->updateOrCreate(['slug' => 'navy-off-shoulder-top'], [
-      'name' => 'Navy Off Shoulder Top',
-      'description' => 'Soft navy off-the-shoulder top with a draped silhouette.',
-      'price' => 6.99,
-      'image_url' => 'https://i.pinimg.com/1200x/ed/17/fe/ed17fe1964de3758b5e4df6b7f457c1a.jpg',
-      'brand' => 'Mango'
-     ]);
+$product = $mens->products()->updateOrCreate(['slug' => 'grey-wool-blouson-jacket'], [
+    'name' => 'Grey Wool Blouson Jacket',
+    'description' => 'Warm grey wool-blend blouson jacket with welt pockets, banded hem and clean tailored details.',
+    'price' => 30.00,
+    'image_url' => 'https://i.pinimg.com/1200x/ca/c8/cf/cac8cf0f1774f51a72258cfafac3dc45.jpg',
+    'brand' => 'Wconcept'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-     $womens->products()->updateOrCreate(['slug' => 'grey-button-knit-top'], [
-      'name' => 'Grey Button Knit Top',
-      'description' => 'Fitted grey knit top with a button front and soft stretch fabric.',
-      'price' => 7.00,
-      'image_url' => 'https://i.pinimg.com/1200x/e1/87/32/e18732b4231878211da1235b52f0f1d6.jpg',
-      'brand' => 'PrettyLittleThing'
-      ]);
+$product = $mens->products()->updateOrCreate(['slug' => 'oversized-grey-jumper'], [
+    'name' => 'Oversized Grey Jumper',
+    'description' => 'Soft oversized alpaca-merino jumper with a textured feel and relaxed fit.',
+    'price' => 12.99,
+    'image_url' => 'https://i.pinimg.com/474x/8e/09/cf/8e09cfd8ac6d98129b6415cf4a9a0a57.jpg',
+    'brand' => 'COS'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-    $womens->products()->updateOrCreate(['slug' => 'beige-cropped-jacket'], [
-      'name' => 'Beige Cropped Jacket',
-      'description' => 'Minimal beige cropped jacket with a clean zip front.',
-      'price' => 12.00,
-      'image_url' => 'https://i.pinimg.com/736x/07/d3/68/07d368536fe9e612a91f8ca2c69a2eda.jpg',
-      'brand' => 'H&M'
-    ]);
+$product = $mens->products()->updateOrCreate(['slug' => 'polo-cap'], [
+    'name' => 'Polo Cap',
+    'description' => 'Polo Country Logo-Embroidered Cotton-Twill Baseball Cap.',
+    'price' => 5.00,
+    'image_url' => 'https://i.pinimg.com/736x/fe/dc/5c/fedc5cca9298ec93930541b0275fa320.jpg',
+    'brand' => 'Mr Porter'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-     $womens->products()->updateOrCreate(['slug' => 'black-puffer-jacket'], [
-      'name' => 'Black Puffer Jacket',
-      'description' => 'Warm black puffer jacket with a high collar and padded finish.',
-      'price' => 49.99,
-      'image_url' => 'https://i.pinimg.com/1200x/3e/c7/b2/3ec7b2bd54c245f7bf99bce5454e3e7b.jpg',
-      'brand' => 'Superdry'
-    ]);
-     $womens->products()->updateOrCreate(['slug' => 'navy-shoulder-handbag'], [
-      'name' => 'Navy Shoulder Handbag',
-      'description' => 'Stylish navy shoulder handbag with multiple front pockets and silver hardware detailing.',
-      'price' => 20.00,
-      'image_url' => 'https://i.pinimg.com/1200x/8c/fa/08/8cfa08ad6a324e99435fedf422037e26.jpg',
-      'brand' => 'Catwalk'
-    ]);
+$product = $mens->products()->updateOrCreate(['slug' => 'yellow-casual-overshirt'], [
+    'name' => 'Yellow Casual Overshirt',
+    'description' => 'Lightweight yellow overshirt layered over a striped t-shirt, perfect for a relaxed summer look.',
+    'price' => 10.00,
+    'image_url' => 'https://plus.unsplash.com/premium_photo-1683140435505-afb6f1738d11?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'brand' => 'Zara'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-    $womens->products()->updateOrCreate(['slug' => 'olive-green-vintage-handbag'], [
-      'name' => 'Olive Green Vintage Handbag',
-      'description' => 'Classic olive green handbag with vintage-style buckles and structured design.',
-      'price' => 18.00,
-      'image_url' => 'https://i.pinimg.com/736x/c9/37/6d/c9376dd68e20f0de1ba8e4bde11a5d63.jpg',
-      'brand' => 'River Island'
-     ]);
+$product = $mens->products()->updateOrCreate(['slug' => 'grey-relaxed-jeans'], [
+    'name' => 'Grey Relaxed Fit Jeans',
+    'description' => 'Light grey jeans with a relaxed fit, offering comfort and a clean modern style.',
+    'price' => 16.99,
+    'image_url' => 'https://i.pinimg.com/736x/85/50/bb/8550bbd8c5266799114356858b086ee1.jpg',
+    'brand' => 'Pull & Bear'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
 
-    $womens->products()->updateOrCreate(['slug' => 'burgundy-leather-tote'], [
-      'name' => 'Burgundy Leather Tote',
-      'description' => 'Elegant burgundy leather tote bag with a smooth finish.',
-      'price' => 13.99,
-       'image_url' => 'https://i.pinimg.com/736x/92/31/63/9231631bc2283a4077b2b3a9be5b67cd.jpg',
-      'brand' => 'Coach'
-     ]);
-     // Footwear
-    $footwear->products()->updateOrCreate(['slug' => 'running-shoes'], [
+$product = $mens->products()->updateOrCreate(['slug' => 'black-tshirt'], [
+    'name' => 'Black T-Shirt',
+    'description' => 'Simple black t-shirt with a clean fit, made from soft breathable cotton for everyday wear.',
+    'price' => 9.99,
+    'image_url' => 'https://plus.unsplash.com/premium_photo-1689531916407-d64dedd6126d?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'brand' => 'Uniqlo'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'black-washed-jeans'], [
+    'name' => 'Black Washed Jeans',
+    'description' => 'Classic black washed jeans with a relaxed straight fit, perfect for everyday casual wear.',
+    'price' => 17.00,
+    'image_url' => 'https://i.pinimg.com/736x/b2/89/c7/b289c7911f76508d6ad84f5aedf2ea77.jpg',
+    'brand' => 'Levis'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'navy-check-overshirt'], [
+    'name' => 'Navy Check Overshirt',
+    'description' => 'Stylish navy check overshirt layered over a long sleeve tee, offering a modern casual look.',
+    'price' => 13.00,
+    'image_url' => 'https://i.pinimg.com/736x/1d/a9/b7/1da9b7ee91f359337924cac385fec7d8.jpg',
+    'brand' => 'COS'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'white-slim-fit-jeans'], [
+    'name' => 'White Slim Fit Jeans',
+    'description' => 'Crisp white slim fit jeans designed for a sharp, clean look with everyday comfort.',
+    'price' => 12.99,
+    'image_url' => 'https://i.pinimg.com/736x/6b/07/46/6b074680575a0acb9e223c9f8957c2db.jpg',
+    'brand' => 'Zara'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'brown-leather-style-jacket'], [
+    'name' => 'Brown Leather Style Jacket',
+    'description' => 'Premium brown leather-style jacket with a relaxed fit, perfect for layering over casual outfits.',
+    'price' => 49.99,
+    'image_url' => 'https://i.pinimg.com/1200x/00/57/71/005771b1e7f450e6134db54417c83557.jpg',
+    'brand' => 'COS'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'black-utility-leather-jacket'], [
+    'name' => 'Black Utility Leather Jacket',
+    'description' => 'Sleek black leather jacket with front pockets and a structured fit.',
+    'price' => 79.99,
+    'image_url' => 'https://i.pinimg.com/1200x/e3/be/cc/e3beccfe455d39a46e311996615d8079.jpg',
+    'brand' => 'Zara'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'navy-zip-up-jacket'], [
+    'name' => 'Navy Zip-Up Jacket',
+    'description' => 'Minimal navy zip-up jacket with a clean silhouette, perfect for everyday wear and layering.',
+    'price' => 69.99,
+    'image_url' => 'https://i.pinimg.com/1200x/c5/a2/7c/c5a27c724b2131e8c6db3e00cf3e211b.jpg',
+    'brand' => 'Uniqlo'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'green-zip-neck-jumper'], [
+    'name' => 'Green Zip Neck Jumper',
+    'description' => 'Smart green zip-neck jumper with a refined fit, perfect for layering over shirts. ',
+    'price' => 14.00,
+    'image_url' => 'https://i.pinimg.com/1200x/cb/89/fd/cb89fd877865b347e2cb583fca18b714.jpg',
+    'brand' => 'Reiss'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'brown-graphic-knit-jumper'], [
+    'name' => 'Brown Graphic Knit Jumper',
+    'description' => 'Statement brown jumper featuring an artistic graphic design.',
+    'price' => 12.99,
+    'image_url' => 'https://i.pinimg.com/1200x/e3/63/3d/e3633d7fd0af6b1d50415f687dd53f97.jpg',
+    'brand' => 'ASOS'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'baby-blue-knit-jumper'], [
+    'name' => 'Baby Blue Knit Jumper',
+    'description' => 'Soft baby blue knit jumper with a relaxed fit, perfect for a clean and modern casual style.',
+    'price' => 11.00,
+    'image_url' => 'https://i.pinimg.com/1200x/ec/fd/ee/ecfdee29154a6d8eb88586b6040388c7.jpg',
+    'brand' => 'COS'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'blue-check-knit-beanie'], [
+    'name' => 'Blue Check Knit Beanie',
+    'description' => 'Stylish blue check patterned beanie with a snug fit, perfect for colder days.',
+    'price' => 4.99,
+    'image_url' => 'https://i.pinimg.com/736x/a8/98/fe/a898fe7628de37da17d4bff162883f0f.jpg',
+    'brand' => 'LV Style'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'green-baseball-cap'], [
+    'name' => 'Green Baseball Cap',
+    'description' => 'Classic green baseball cap with a curved brim, perfect for everyday casual wear.',
+    'price' => 7.00,
+    'image_url' => 'https://i.pinimg.com/1200x/f5/3a/d4/f53ad47e1df47b7d6599b8df51bbc37e.jpg',
+    'brand' => 'New Era'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $mens->products()->updateOrCreate(['slug' => 'grey-knit-beanie'], [
+    'name' => 'Grey Knit Beanie',
+    'description' => 'Warm grey knit beanie with a minimal design, ideal for winter outfits.',
+    'price' => 4.99,
+    'image_url' => 'https://i.pinimg.com/1200x/b2/96/17/b29617fe7aae96e5eeaa9406fba95501.jpg',
+    'brand' => 'The North Face'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+// Womens
+$product = $womens->products()->updateOrCreate(['slug' => 'floral-summer-dress'], [
+    'name' => 'Floral Summer Dress',
+    'description' => 'Light and airy floral print dress.',
+    'price' => 8.50,
+    'image_url' => 'https://www.crewclothing.co.uk/images/products/large/WWJ062_FOLKMAUVE.jpg',
+    'brand' => 'Zara'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'cashmere-sweater'], [
+    'name' => 'Soft Cashmere Sweater',
+    'description' => 'Luxuriously soft and warm sweater for winter.',
+    'price' => 20.00,
+    'image_url' => 'https://riseandfall.co/cdn/shop/files/Rise_Fall_CashmereMerinoSaddleSleeveCrewNeckJumperinGraphite_03_d4675dba-69a9-4cb8-99fd-77ce08a61f86.jpg?crop=center&format=webp&height=800&v=1761167623&width=800',
+    'brand' => 'Everlane'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'tailored-marl-midi-dress'], [
+    'name' => 'Tailored Marl Midi Dress',
+    'description' => 'A tailored sleeveless midi dress with a defined waist, side-buckle detailing and practical pockets.',
+    'price' => 12.99,
+    'image_url' => 'https://i.pinimg.com/1200x/c6/76/cf/c676cfdc60f16d0f72cfeb2971264926.jpg',
+    'brand' => 'KM'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'straight-leg-jeans'], [
+    'name' => 'Straight Leg Jeans',
+    'description' => 'Relaxed low-rise pinstripe jeans with a straight leg and classic five-pocket design.',
+    'price' => 20.00,
+    'image_url' => 'https://i.pinimg.com/1200x/d3/73/15/d373159b9c54353f740098a7484947db.jpg',
+    'brand' => 'Urban Outfitters'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'light-pink-poplin-blouse'], [
+    'name' => 'Light Pink Poplin Blouse',
+    'description' => 'Light pink poplin blouse with a flared hem, button-up front and shirred detailing.',
+    'price' => 8.00,
+    'image_url' => 'https://i.pinimg.com/736x/95/80/e5/9580e5a7d2f6b547a582fb6923998adc.jpg',
+    'brand' => 'Motel'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'double-breasted-peacoat'], [
+    'name' => 'Double-Breasted Peacoat',
+    'description' => 'Chic short peacoat with a flattering waist, secure zip pockets and polished detailing.',
+    'price' => 32.00,
+    'image_url' => 'https://i.pinimg.com/736x/78/22/d2/7822d255ce2f2cbf59c47a0e0947e60e.jpg',
+    'brand' => 'Livaa Studio'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'classic-structured-purse'], [
+    'name' => 'Classic Structured Purse',
+    'description' => 'Spacious, organised purse with a sleek finish and versatile style.',
+    'price' => 14.00,
+    'image_url' => 'https://i.pinimg.com/1200x/e3/45/99/e34599056445437aa03ecc3a947096cf.jpg',
+    'brand' => 'Fenwick'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'navy-pinstripe-mini-dress'], [
+    'name' => 'Navy Pinstripe Mini Dress',
+    'description' => 'Sleeveless navy pinstripe mini dress with a clean tailored silhouette.',
+    'price' => 22.00,
+    'image_url' => 'https://i.pinimg.com/1200x/70/07/32/700732895864b99068fbf5a3fa8e8c38.jpg',
+    'brand' => 'Mango'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'brown-midi-dress'], [
+    'name' => 'Brown Midi Dress',
+    'description' => 'Elegant brown midi dress with a fitted waist and soft drape.',
+    'price' => 13.00,
+    'image_url' => 'https://i.pinimg.com/1200x/b6/f9/46/b6f9464d2870789e696e8e55518afda4.jpg',
+    'brand' => 'Reformation'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'taupe-satin-midi-skirt'], [
+    'name' => 'Taupe Satin Midi Skirt',
+    'description' => 'Soft taupe satin midi skirt with a fluid drape.',
+    'price' => 8.99,
+    'image_url' => 'https://i.pinimg.com/1200x/f0/be/69/f0be6961c3cab445c109150ccb47a8c9.jpg',
+    'brand' => 'H&M'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'white-mermaid-maxi-skirt'], [
+    'name' => 'White Mermaid Maxi Skirt',
+    'description' => 'Elegant white maxi skirt with a softly flared hem.',
+    'price' => 11.00,
+    'image_url' => 'https://i.pinimg.com/736x/17/54/3e/17543e1aa27ab1a109e022bd333f152e.jpg',
+    'brand' => 'House of CB'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'brown-pinstripe-wide-leg-trousers'], [
+    'name' => 'Brown Pinstripe Wide Leg Trousers',
+    'description' => 'High-waisted brown pinstripe trousers with a wide leg fit, designed for a smart and flattering silhouette.',
+    'price' => 23.00,
+    'image_url' => 'https://i.pinimg.com/736x/c9/24/80/c924807a6df8de49e198db057d96c264.jpg',
+    'brand' => 'Zara'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'brown-wrap-waist-shirt'], [
+    'name' => 'Brown Wrap Waist Shirt',
+    'description' => 'Structured brown shirt with a wrap waist detail, giving a sharp and elegant tailored look.',
+    'price' => 25.00,
+    'image_url' => 'https://i.pinimg.com/736x/2f/74/2b/2f742bc6b0c0186f9ef40ace4e3219d8.jpg',
+    'brand' => 'House of CB'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'navy-off-shoulder-top'], [
+    'name' => 'Navy Off Shoulder Top',
+    'description' => 'Soft navy off-the-shoulder top with a draped silhouette.',
+    'price' => 6.99,
+    'image_url' => 'https://i.pinimg.com/1200x/ed/17/fe/ed17fe1964de3758b5e4df6b7f457c1a.jpg',
+    'brand' => 'Mango'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'grey-button-knit-top'], [
+    'name' => 'Grey Button Knit Top',
+    'description' => 'Fitted grey knit top with a button front and soft stretch fabric.',
+    'price' => 7.00,
+    'image_url' => 'https://i.pinimg.com/1200x/e1/87/32/e18732b4231878211da1235b52f0f1d6.jpg',
+    'brand' => 'PrettyLittleThing'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'beige-cropped-jacket'], [
+    'name' => 'Beige Cropped Jacket',
+    'description' => 'Minimal beige cropped jacket with a clean zip front.',
+    'price' => 12.00,
+    'image_url' => 'https://i.pinimg.com/736x/07/d3/68/07d368536fe9e612a91f8ca2c69a2eda.jpg',
+    'brand' => 'H&M'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'black-puffer-jacket'], [
+    'name' => 'Black Puffer Jacket',
+    'description' => 'Warm black puffer jacket with a high collar and padded finish.',
+    'price' => 49.99,
+    'image_url' => 'https://i.pinimg.com/1200x/3e/c7/b2/3ec7b2bd54c245f7bf99bce5454e3e7b.jpg',
+    'brand' => 'Superdry'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'navy-shoulder-handbag'], [
+    'name' => 'Navy Shoulder Handbag',
+    'description' => 'Stylish navy shoulder handbag with multiple front pockets and silver hardware detailing.',
+    'price' => 20.00,
+    'image_url' => 'https://i.pinimg.com/1200x/8c/fa/08/8cfa08ad6a324e99435fedf422037e26.jpg',
+    'brand' => 'Catwalk'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'olive-green-vintage-handbag'], [
+    'name' => 'Olive Green Vintage Handbag',
+    'description' => 'Classic olive green handbag with vintage-style buckles and structured design.',
+    'price' => 18.00,
+    'image_url' => 'https://i.pinimg.com/736x/c9/37/6d/c9376dd68e20f0de1ba8e4bde11a5d63.jpg',
+    'brand' => 'River Island'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+$product = $womens->products()->updateOrCreate(['slug' => 'burgundy-leather-tote'], [
+    'name' => 'Burgundy Leather Tote',
+    'description' => 'Elegant burgundy leather tote bag with a smooth finish.',
+    'price' => 13.99,
+    'image_url' => 'https://i.pinimg.com/736x/92/31/63/9231631bc2283a4077b2b3a9be5b67cd.jpg',
+    'brand' => 'Coach'
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($clothingSizes);
+
+// Footwear
+$product = $footwear->products()->updateOrCreate(['slug' => 'running-shoes'], [
     'name' => 'High-Performance Running Shoes',
     'description' => 'Lightweight shoes for long-distance running.',
     'price' => 60.00,
     'image_url' => 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSc8VheUvO_jb4mMjiVfTbQY8xzd9qRJm91-CgI0NeqYMdz6GwtbChFXd1l54EbDJIPBVI-yCbMMVBJ7MUfk9t2fVEG1cVqOQ582SAbi1tPZk2sdadG1Bly5KESLO6DoBapuygUhtc&usqp=CAc',
     'brand' => 'Nike',
     'gender' => 'mens'
-      ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-    $footwear->products()->updateOrCreate(['slug' => 'leather-boots'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'leather-boots'], [
     'name' => 'Classic Leather Ankle Boots',
     'description' => 'Durable and stylish leather boots.',
     'price' => 80.00,
     'image_url' => 'https://cdn.media.amplience.net/i/drmartens/12308001.80.jpg',
     'brand' => 'Doc Martens',
     'gender' => 'mens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-    $footwear->products()->updateOrCreate(['slug' => 'm1000-faux-leather-trainers'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'm1000-faux-leather-trainers'], [
     'name' => 'M1000 Faux Leather Trainers',
     'description' => 'Retro-inspired M1000 trainers with sleek panelling, breathable mesh and ABZORB cushioning.',
     'price' => 75.00,
     'image_url' => 'https://i.pinimg.com/736x/d3/a6/70/d3a670b44b21cb49bb00103a0ffbed28.jpg',
     'brand' => 'JD Sports',
     'gender' => 'mens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'chocolate-leather-trucker-boots'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'chocolate-leather-trucker-boots'], [
     'name' => 'Chocolate Leather Trucker Boots',
     'description' => 'Matte chocolate leather trucker boots with a pull-on design and mid block heel.',
     'price' => 25.00,
     'image_url' => 'https://i.pinimg.com/736x/8d/ef/e8/8defe85443619cf9c80624e44e14d1a1.jpg',
     'brand' => 'ASOS',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'classic-black-formal-shoes'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'classic-black-formal-shoes'], [
     'name' => 'Classic Black Formal Shoes',
     'description' => 'Elegant black formal shoes perfect for business and formal occasions.',
     'price' => 30.00,
     'image_url' => 'https://i.pinimg.com/736x/e2/f2/b6/e2f2b6e2e8236c25aaf5f0498d056f7e.jpg',
     'brand' => 'Clarks',
     'gender' => 'mens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-    $footwear->products()->updateOrCreate(['slug' => 'red-patent-slingback-heels'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'red-patent-slingback-heels'], [
     'name' => 'Red Patent Slingback Heels',
     'description' => 'Stylish red slingback heels with a glossy finish.',
     'price' => 28.00,
     'image_url' => 'https://i.pinimg.com/736x/01/76/7a/01767a9c2e51eb298c1dd9a48b404818.jpg',
     'brand' => 'ZARA',
     'gender' => 'womens'
-    ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-    $footwear->products()->updateOrCreate(['slug' => 'brown-mesh-heeled-shoes'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'brown-mesh-heeled-shoes'], [
     'name' => 'Brown Mesh Heeled Shoes',
     'description' => 'Elegant brown mesh heels with delicate detailing.',
     'price' => 17.00,
     'image_url' => 'https://i.pinimg.com/1200x/11/b9/1a/11b91a450c82ca191da108c5938aaca8.jpg',
     'brand' => 'ASOS',
     'gender' => 'womens'
-    ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'black-ballerina-flats'], [
     'name' => 'Black Ballerina Flats',
     'description' => 'Comfortable black ballerina flats with a sleek design.',
     'price' => 14.99,
     'image_url' => 'https://i.pinimg.com/736x/b0/4a/4b/b04a4bb6c0db6e16e79daa69b5c05eb9.jpg',
     'brand' => 'H&M',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'nike-brown-mesh-trainers'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'nike-brown-mesh-trainers'], [
     'name' => 'Nike Brown Mesh Trainers',
     'description' => 'Breathable brown mesh trainers with cushioned sole and modern sporty design for everyday comfort.',
     'price' => 65.00,
     'image_url' => 'https://i.pinimg.com/736x/a3/08/45/a30845ce53c769c8945ea8fbc08ec284.jpg',
     'brand' => 'Nike',
     'gender' => 'mens'
-      ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'chunky-grey-beige-trainers'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'chunky-grey-beige-trainers'], [
     'name' => 'Chunky Grey & Beige Trainers',
     'description' => 'Chunky retro-style trainers with grey and beige tones, offering comfort and a bold streetwear look.',
     'price' => 70.00,
     'image_url' => 'https://i.pinimg.com/736x/c1/f3/b3/c1f3b381f6835b3b9523173797adce07.jpg',
     'brand' => 'Reebok',
     'gender' => 'mens'
-    ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'adidas-samba-classic'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'adidas-samba-classic'], [
     'name' => 'Adidas Samba Classic',
     'description' => 'Iconic Adidas Samba trainers featuring black and white leather with a timeless design.',
     'price' => 75.00,
     'image_url' => 'https://i.pinimg.com/1200x/21/89/e7/2189e7a8653629ffd7a1907bc0e7449f.jpg',
     'brand' => 'Adidas',
     'gender' => 'mens'
-    ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'new-balance-574-blue'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'new-balance-574-blue'], [
     'name' => 'New Balance 574 Trainers',
     'description' => 'Classic New Balance 574 trainers in blue with premium comfort and everyday versatility.',
     'price' => 80.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-ml574-core-lace-up-trainers~77079501FRSC.jpg',
     'brand' => 'New Balance',
     'gender' => 'mens'
-       ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($mensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'adidas-gazelle-blue'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'adidas-gazelle-blue'], [
     'name' => 'Adidas Gazelle Indoor Trainers (Blue)',
     'description' => 'Classic Adidas Gazelle trainers in blue suede with a timeless design and gum sole.',
     'price' => 85.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-originals-gazelle-indoor-trainers~74036061FRSC.jpg',
     'brand' => 'Adidas',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'adidas-grey-ballerina'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'adidas-grey-ballerina'], [
     'name' => 'Adidas Grey Ballerina Trainers',
     'description' => 'Lightweight grey ballerina-style trainers with a sleek fit and flexible comfort.',
     'price' => 60.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/adidas-sportswear-barreda-mary-jane-ballerina-trainers~72931807FRSC.jpg',
     'brand' => 'Adidas',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-     $footwear->products()->updateOrCreate(['slug' => 'new-balance-373-burgundy'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'new-balance-373-burgundy'], [
     'name' => 'New Balance 373 Trainers (Burgundy)',
     'description' => 'Stylish burgundy trainers with classic New Balance comfort and everyday wearability.',
     'price' => 70.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-373-lace-up-trainers~78683251FRSC.jpg',
     'brand' => 'New Balance',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
-      $footwear->products()->updateOrCreate(['slug' => 'new-balance-beige-leopard'], [
+$product = $footwear->products()->updateOrCreate(['slug' => 'new-balance-beige-leopard'], [
     'name' => 'New Balance Beige Leopard Trainers',
     'description' => 'Trendy beige trainers with subtle leopard print detail and cushioned sole for all-day comfort.',
     'price' => 75.00,
     'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/new-balance-non-slip-breathable-trainers~75644309FRSC.jpg',
     'brand' => 'New Balance',
     'gender' => 'womens'
-     ]);
+]);
+$product->sizes()->delete();
+$product->sizes()->createMany($womensShoeSizes);
 
 
         // --- 3. Dorm Life Category
@@ -718,6 +889,7 @@ class ShopSeeder extends Seeder
       'image_url' => 'https://freemans.scene7.com/is/image/OttoUK/553w/catherine-lansfield-seersucker-frill-stripe-duvet-cover-set---green~59H659FRSP.jpg',
       'brand' => 'Catherine Lansfield'
      ]);
+
 
 
         // Decor

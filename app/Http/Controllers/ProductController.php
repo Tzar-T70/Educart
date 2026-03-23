@@ -9,6 +9,7 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
+        $product->load('sizes', 'subCategory.category');
         return view('products.show', compact('product'));
     }
 }

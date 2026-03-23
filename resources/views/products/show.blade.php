@@ -23,6 +23,7 @@
                                     <div class="flex items-center justify-center h-full text-[var(--text)]">No Image Available</div>
                                 @endif
                             </div>
+
                             <!-- Thumbnail placeholders -->
                             <div class="grid grid-cols-4 gap-4">
                                 @for($i = 0; $i < 4; $i++)
@@ -41,7 +42,7 @@
                                 <h2 class="text-sm font-semibold text-[var(--brand-dark-blue)] uppercase tracking-wide mb-2">{{ $product->brand }}</h2>
                             @endif
                             <h1 class="text-3xl font-bold text-[var(--text)] mb-4">{{ $product->name }}</h1>
-                            
+
                             <!-- Ratings -->
                             <div class="flex items-center mb-6">
                                 <div class="flex text-yellow-400">
@@ -65,6 +66,19 @@
 
                             <!-- Actions -->
                             <div class="mt-auto space-y-4 pt-6 border-t border-[var(--brand-beige)]">
+                                @if($product->sizes->count())
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-[var(--text)] mb-2">Available Sizes</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            @foreach($product->sizes as $size)
+                                                <button type="button" class="px-4 py-2 border rounded-md text-sm text-[var(--text)] border-[var(--brand-beige)] hover:bg-[var(--brand-dark-blue)] hover:text-white transition">
+                                                    {{ $size->size }}
+                                                </button>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @endif
+
                                 <form action="{{ route('basket.add') }}" method="POST" class="flex items-center space-x-4">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -82,6 +96,7 @@
                                         Add to Cart
                                     </button>
                                 </form>
+
                                 <button class="w-full bg-brand-beige text-[var(--brand-dark-blue)] px-6 py-3 rounded-md font-medium hover:bg-brand-gray transition">
                                     Buy Now
                                 </button>
@@ -104,7 +119,7 @@
                                     </div>
                                 </div>
                                 <p class="text-[var(--text)] text-sm mb-6">Based on 128 reviews</p>
-                                
+
                                 <div class="space-y-2">
                                     @foreach([5, 4, 3, 2, 1] as $star)
                                         <div class="flex items-center text-sm">
